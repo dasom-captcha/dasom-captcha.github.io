@@ -29,10 +29,19 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="1. Git Branch 사용하기 123$ git branch #현재 존재하는 branch 조회$ git checkout #현재 작업중인 brach 조회$ git checkout branch1 #전환 1$ git branch branch1 master  master에서 branch1이름의 branch 만들기  1$ git checkout -b branch1">
 <meta property="og:locale" content="ko">
-<meta property="og:updated_time" content="2019-04-04T07:47:38.066Z">
+<meta property="og:image" content="http://dasom-captcha.github.io/2019/04/04/03-BaekShin-Git/example1.png">
+<meta property="og:image" content="http://dasom-captcha.github.io/2019/04/04/03-BaekShin-Git/merge.png">
+<meta property="og:image" content="http://dasom-captcha.github.io/2019/04/04/03-BaekShin-Git/rebase.png">
+<meta property="og:image" content="http://dasom-captcha.github.io/2019/04/04/03-BaekShin-Git/ff1.png">
+<meta property="og:image" content="http://dasom-captcha.github.io/2019/04/04/03-BaekShin-Git/ff2.png">
+<meta property="og:image" content="http://dasom-captcha.github.io/2019/04/04/03-BaekShin-Git/ff3.png">
+<meta property="og:image" content="http://dasom-captcha.github.io/2019/04/04/03-BaekShin-Git/nff.png">
+<meta property="og:image" content="http://dasom-captcha.github.io/2019/04/04/03-BaekShin-Git/ff4.png">
+<meta property="og:updated_time" content="2019-04-04T09:18:35.659Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="03-BaekShin-Git">
 <meta name="twitter:description" content="1. Git Branch 사용하기 123$ git branch #현재 존재하는 branch 조회$ git checkout #현재 작업중인 brach 조회$ git checkout branch1 #전환 1$ git branch branch1 master  master에서 branch1이름의 branch 만들기  1$ git checkout -b branch1">
+<meta name="twitter:image" content="http://dasom-captcha.github.io/2019/04/04/03-BaekShin-Git/example1.png">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -196,10 +205,38 @@ var themeMenus = {};
 <li>master에서 branch1이름의 branch 만들고 checkout함(전환)</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git branch -d branch1 <span class="comment">#삭제(github는 유지)</span></span><br><span class="line">$ git push origin -delete branch1 <span class="comment">#삭제(github는 삭제)</span></span><br></pre></td></tr></table></figure>
-<h4 id="1-1-merge와-rebase"><a href="#1-1-merge와-rebase" class="headerlink" title="1.1 merge와 rebase"></a>1.1 merge와 rebase</h4><ul>
-<li>merge, rebase 차이</li>
-<li>merge시 fast-forward 충돌 해결법 또는 ff 가 무엇인지</li>
+<h3 id="2-merge와-rebase"><a href="#2-merge와-rebase" class="headerlink" title="2. merge와 rebase"></a>2. merge와 rebase</h3><hr>
+<p>두 개의 branch를 합치는 방법으로는 merge와 rebase가 있다.<br>차이점을 한번 알아본 후 merge시 주의할 점도 알아보자.</p>
+<h4 id="2-1-merge와-rebase의-차이"><a href="#2-1-merge와-rebase의-차이" class="headerlink" title="2.1 merge와 rebase의 차이"></a>2.1 merge와 rebase의 차이</h4><hr>
+<img src="/2019/04/04/03-BaekShin-Git/example1.png" title="[example1]">
+<p>현 상태가 위와 같다고 가정을 해본다.</p>
+<p>merge를 하게 되면 아래 그림과 같은 로그가 남겨진다.</p>
+<img src="/2019/04/04/03-BaekShin-Git/merge.png" title="[merge]">
+<p>rebase를 하게 되면 아래 그림과 같은 로그가 남겨진다.</p>
+<img src="/2019/04/04/03-BaekShin-Git/rebase.png" title="[rebase]">
+<p>명백한 차이점이 있다!</p>
+<ul>
+<li>merge : 변경된 점의 모든 로그가 남는다. (큰 프로젝트면 복잡해짐)</li>
+<li>rebase : 로그가 단순하게 변경되지만, 정확한 로그를 남기는 것이 불가능해 진다.</li>
 </ul>
+<h4 id="2-2-merge시-fast-forward-충돌-해결법"><a href="#2-2-merge시-fast-forward-충돌-해결법" class="headerlink" title="2.2 merge시 fast-forward 충돌 해결법"></a>2.2 merge시 fast-forward 충돌 해결법</h4><hr>
+<img src="/2019/04/04/03-BaekShin-Git/ff1.png" title="[ff1]">
+<p>다음과 같이 master branch와 bugfix branch가 있다고 가정한다.</p>
+<p>이제 merge를 하게 되면</p>
+<img src="/2019/04/04/03-BaekShin-Git/ff2.png" title="[ff2]">
+<p>bugfix branch가 master의 모든 이력을 포함하고 있기 때문에 master branch가 단순히 이동하기만 한다. 이것이 바로 <strong>fast-forward</strong>..</p>
+<p><strong>How to solve</strong><br><img src="/2019/04/04/03-BaekShin-Git/ff3.png" title="[ff3]"></p>
+<p>단순하게 master branch에 변경점을 주고 commit하면 될 것 같다.. 혹은</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git merge --no-ff</span><br></pre></td></tr></table></figure>
+<p>merge를 할때 다음과 같은 옵션을 주게 되면<br><img src="/2019/04/04/03-BaekShin-Git/nff.png" title="[nff]"></p>
+<p>위 사진과 같이 fast-forward merge를 하지 않는다. 이렇게 하면 merge를 한 이후에도 bugfix branch를 계속해서 사용할 수 있다! </p>
+<p><strong>다음은 문제가 발생한 후의 대처법이다.</strong><br><img src="/2019/04/04/03-BaekShin-Git/ff4.png" title="[ff4]"></p>
+<p>위 그림을 보면 master와 issue2가 fast-forward merge되었다.</p>
+<p>이 상태에서 issue3와 merge를 할 시 같은 파일의 같은 행이 변경 된다면 분명 오류가 날 것이며 파일이 다음과 같이 변경 될 것의 예시이다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">111111111111111</span><br><span class="line">222222222222222</span><br><span class="line">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</span><br><span class="line">333333333333333</span><br><span class="line">=======</span><br><span class="line">444444444444444</span><br><span class="line">&gt;&gt;&gt;&gt;&gt;&gt;&gt; issue3</span><br></pre></td></tr></table></figure>
+<p>이제</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">111111111111111</span><br><span class="line">222222222222222</span><br><span class="line">333333333333333</span><br><span class="line">444444444444444</span><br></pre></td></tr></table></figure>
+<p>다음과 같이 변경해주고 commit하면 문제가 해결 된다. (이것도 non fast-forward 방식)</p>
 
       
     </div>
@@ -274,7 +311,7 @@ var themeMenus = {};
     <div id="toc" class="toc-article" style="overflow-y: scroll; max-width: 28%;">
     <strong class="toc-title">Contents</strong>
     
-      <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Git-Branch-사용하기"><span class="nav-number">1.</span> <span class="nav-text">1. Git Branch 사용하기</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-merge와-rebase"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 merge와 rebase</span></a></li></ol></li></ol>
+      <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Git-Branch-사용하기"><span class="nav-number">1.</span> <span class="nav-text">1. Git Branch 사용하기</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-merge와-rebase"><span class="nav-number">2.</span> <span class="nav-text">2. merge와 rebase</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-merge와-rebase의-차이"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 merge와 rebase의 차이</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-merge시-fast-forward-충돌-해결법"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 merge시 fast-forward 충돌 해결법</span></a></li></ol></li></ol>
     
     </div>
   </aside>
