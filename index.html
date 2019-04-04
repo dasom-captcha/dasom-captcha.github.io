@@ -153,6 +153,178 @@ var themeMenus = {};
         
           <section id="main">
   
+    <article id="post-03-Hexo" class="article article-type-post" itemscope itemprop="blogPost">
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2019/04/04/03-Hexo/">03_Hexo</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	Posted on <a href="/2019/04/04/03-Hexo/" class="article-date">
+	  <time datetime="2019-04-04T07:43:01.000Z" itemprop="datePublished">4월 4, 2019</time>
+	</a>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-Tag-Plugins"><a href="#1-Tag-Plugins" class="headerlink" title="1. Tag Plugins"></a>1. Tag Plugins</h3><hr>
+<p>Hexo는 마크다운 외에 포스트를 작성하기 위해 Tag Plugin이라는 자체적인 문법을 지원</p>
+<h4 id="1-1-인용-구문"><a href="#1-1-인용-구문" class="headerlink" title="1.1 인용 구문"></a>1.1 인용 구문</h4><hr>
+<p><strong>How to use</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% blockquote [author[, source]] [link] [source_link_title] %&#125;</span><br><span class="line">content</span><br><span class="line">&#123;% endblockquote %&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>Example</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% blockquote 신동욱, 대학원생 https://github.com/nawook96 %&#125;</span><br><span class="line">배고프다</span><br><span class="line">&#123;% endblockquote %&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>Result</strong><br><blockquote><p>배고프다</p>
+<footer><strong>신동욱, 대학원생</strong><cite><a href="https://github.com/nawook96" target="_blank" rel="noopener">github.com/nawook96</a></cite></footer></blockquote></p>
+<h4 id="1-2-코드-삽입"><a href="#1-2-코드-삽입" class="headerlink" title="1.2 코드 삽입"></a>1.2 코드 삽입</h4><hr>
+<p>lang은 <a href="https://highlightjs.org" target="_blank" rel="noopener">https://highlightjs.org</a> 에서 지원하는 언어만 나옴(highlight), 파일명 명시도 가능<br><strong>How to use</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% codeblock [title] [lang:language] [url] [link text] %&#125;</span><br><span class="line">code snippet</span><br><span class="line">&#123;% endcodeblock %&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>Example</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% codeblock lang:objc hi.h%&#125;</span><br><span class="line">[rectangle setX: 10 y: 10 width: 20 height: 20];</span><br><span class="line">&#123;% endcodeblock %&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>Result</strong><br><figure class="highlight objc"><figcaption><span>hi.h</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[rectangle setX: <span class="number">10</span> y: <span class="number">10</span> width: <span class="number">20</span> height: <span class="number">20</span>];</span><br></pre></td></tr></table></figure></p>
+<h4 id="1-3-YOUTUBE-삽입"><a href="#1-3-YOUTUBE-삽입" class="headerlink" title="1.3 YOUTUBE 삽입"></a>1.3 YOUTUBE 삽입</h4><hr>
+<p><strong>How to use</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% youtube video_id %&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>Example</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% youtube Z0ti3pBKmes %&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>Result</strong><br><div class="video-container"><iframe src="//www.youtube.com/embed/Z0ti3pBKmes" frameborder="0" allowfullscreen></iframe></div></p>
+<h4 id="1-4-Asset-삽입"><a href="#1-4-Asset-삽입" class="headerlink" title="1.4 Asset 삽입"></a><strong>1.4 Asset 삽입</strong></h4><hr>
+<p>이미지 삽입에서 추가 설명<br><strong>How to use</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% asset_path slug %&#125;</span><br><span class="line">&#123;% asset_img slug [title] %&#125;</span><br><span class="line">&#123;% asset_link slug [title] %&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="2-disqus-추가하기"><a href="#2-disqus-추가하기" class="headerlink" title="2. disqus 추가하기"></a>2. disqus 추가하기</h3><hr>
+<ol>
+<li>disqus 가입하기</li>
+<li>I want to comment on site 클릭</li>
+<li>edit profile -&gt; Acount에서 username 설정하기</li>
+<li><a href="https://disqus.com/profile/signup/intent/" target="_blank" rel="noopener">https://disqus.com/profile/signup/intent/</a> I want to install Disqus on my site 클릭 &amp; 설정</li>
+<li>hexo 폴더의 _config.yml 편집</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">disqus_shortname: username</span><br></pre></td></tr></table></figure>
+<ul>
+<li>disqus site를 만들 때 한국어 설정이 안보이는경우가 있습니다. </li>
+<li>이때는 개발자 도구를 열어 수정하면 사용가능합니다.</li>
+</ul>
+<p><img src="https://user-images.githubusercontent.com/36959292/55462622-27f17580-5632-11e9-9890-4f4b5191cee5.PNG" alt="캡처"></p>
+<ul>
+<li>맨 마지막 줄 추가!</li>
+</ul>
+<h3 id="3-Hexo-Blog에-image-추가"><a href="#3-Hexo-Blog에-image-추가" class="headerlink" title="3. Hexo Blog에 image 추가"></a>3. Hexo Blog에 image 추가</h3><hr>
+<p>hexo는 source 폴더의 자원을 가지고 generate를 할 때 public 폴더를 생성합니다.</p>
+<ul>
+<li>전역자원 폴더(/source)</li>
+</ul>
+<p>/source/images라는 폴더를 사용하면 어느 포스트던 폴더 내 자원사용이 가능합니다.</p>
+<ul>
+<li>포스트 자원 폴더</li>
+</ul>
+<p>전역 폴더에서 모든 파일을 관리하는 것이 아니라 포스트마다 폴더를 만들어 관리할 수 있습니다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># Writing</span><br><span class="line">post_asset_folder: true</span><br></pre></td></tr></table></figure>
+<p>hexo 블로그 폴더의 _config.yml에서 위와 같이 변경하면 </p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new</span><br></pre></td></tr></table></figure>
+<p>를 할때마다 폴더가 함께 생성됩니다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![](./folder/img.png)</span><br></pre></td></tr></table></figure>
+<p>전역자원 폴더에 비해 상대경로로 빠르게 접근 가능하다는 장점이 있습니다.</p>
+<h4 id="3-1-Asset을-이용하여-image-추가"><a href="#3-1-Asset을-이용하여-image-추가" class="headerlink" title="3.1 Asset을 이용하여 image 추가"></a>3.1 Asset을 이용하여 image 추가</h4><hr>
+<img src="/2019/04/04/03-Hexo/cap1.PNG" title="[cap1]">
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new post &quot;blahblah&quot;</span><br></pre></td></tr></table></figure>
+<p>다음 명령 실행시 같은 경로에 blahblah 폴더가 같이 생성됨<br><img src="/2019/04/04/03-Hexo/cap2.PNG" title="[cap2]"><br><strong>Example</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% asset_img cap1.PNG [cap2] %&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>Result</strong><br><img src="/2019/04/04/03-Hexo/cap1.PNG" title="[result1]"></p>
+<img src="/2019/04/04/03-Hexo/cap3.PNG" title="[cap3]">
+<img src="/2019/04/04/03-Hexo/cap4.PNG" title="[cap4]">
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[📃 PDF FILE ](../pdf/Git.pdf)</span><br><span class="line">&#123;% asset_link Git.pdf 📃 PDF FILE %&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>어떻게 다를까?</strong><br><img src="/2019/04/04/03-Hexo/cap5.PNG" title="[cap5]"><br><img src="/2019/04/04/03-Hexo/cap6.PNG" title="[cap6]"><br>위에 사용한건 상대경로이기 때문에 Home 화면을 제외한 곳에서 포스트를 보게 되면 찾을 수가 다.</p>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/categories/Hexo/">Hexo</a>
+
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
+
+      
+            
+      
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+    
+
+  
+    <article id="post-03-BaekShin-Git" class="article article-type-post" itemscope itemprop="blogPost">
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2019/04/04/03-BaekShin-Git/">03-BaekShin-Git</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	Posted on <a href="/2019/04/04/03-BaekShin-Git/" class="article-date">
+	  <time datetime="2019-04-04T07:38:33.000Z" itemprop="datePublished">4월 4, 2019</time>
+	</a>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-Git-Branch-사용하기"><a href="#1-Git-Branch-사용하기" class="headerlink" title="1. Git Branch 사용하기"></a>1. Git Branch 사용하기</h3><hr>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git branch <span class="comment">#현재 존재하는 branch 조회</span></span><br><span class="line">$ git checkout <span class="comment">#현재 작업중인 brach 조회</span></span><br><span class="line">$ git checkout branch1 <span class="comment">#전환</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git branch branch1 master</span><br></pre></td></tr></table></figure>
+<ul>
+<li>master에서 branch1이름의 branch 만들기</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout -b branch1 master</span><br></pre></td></tr></table></figure>
+<ul>
+<li>master에서 branch1이름의 branch 만들고 checkout함(전환)</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git branch -d branch1 <span class="comment">#삭제(github는 유지)</span></span><br><span class="line">$ git push origin -delete branch1 <span class="comment">#삭제(github는 삭제)</span></span><br></pre></td></tr></table></figure>
+<h4 id="1-1-merge와-rebase"><a href="#1-1-merge와-rebase" class="headerlink" title="1.1 merge와 rebase"></a>1.1 merge와 rebase</h4><ul>
+<li>merge, rebase 차이</li>
+<li>merge시 fast-forward 충돌 해결법 또는 ff 가 무엇인지</li>
+</ul>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/categories/Git/">Git</a>
+
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
+
+      
+            
+      
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+    
+
+  
     <article id="post-02-Hexo" class="article article-type-post" itemscope itemprop="blogPost">
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
@@ -914,6 +1086,30 @@ var themeMenus = {};
               <div class="widget-entry-summary" style="margin: 0;">
             
 
+              <h6 style="margin: 0;"><a href="/2019/04/04/03-Hexo/">03_Hexo</a></h6>
+              <span>4월 4, 2019</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
+              <h6 style="margin: 0;"><a href="/2019/04/04/03-BaekShin-Git/">03-BaekShin-Git</a></h6>
+              <span>4월 4, 2019</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
               <h6 style="margin: 0;"><a href="/2019/04/04/02-Hexo/">02_Hexo</a></h6>
               <span>4월 4, 2019</span>
             </div>
@@ -956,30 +1152,6 @@ var themeMenus = {};
 
           </li>
         
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2019/04/04/02-Numpy/">02_Numpy</a></h6>
-              <span>4월 4, 2019</span>
-            </div>
-
-          </li>
-        
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2019/04/04/01-Pandas/">01_Pandas</a></h6>
-              <span>4월 4, 2019</span>
-            </div>
-
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -989,7 +1161,7 @@ var themeMenus = {};
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">2</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -999,7 +1171,7 @@ var themeMenus = {};
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a><span class="tag-list-count">2</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a><span class="tag-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -1009,7 +1181,7 @@ var themeMenus = {};
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a>
+      <a href="/tags/Git/" style="font-size: 20px;">Git</a> <a href="/tags/Hexo/" style="font-size: 20px;">Hexo</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a>
     </div>
   </div>
 
@@ -1019,7 +1191,7 @@ var themeMenus = {};
     <h3 class="widget-title">Archives</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">4월 2019</a><span class="archive-list-count">7</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">4월 2019</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 
