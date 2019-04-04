@@ -23,7 +23,7 @@
 <meta property="og:title" content="Hexo">
 <meta property="og:url" content="http://dasom-captcha.github.io/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:locale" content="default">
+<meta property="og:locale" content="ko">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
   
@@ -161,7 +161,7 @@ var themeMenus = {};
         
           <section id="main">
   
-    <article id="post-Hello-Dasom" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-01-Hexo" class="article article-type-post" itemscope itemprop="blogPost">
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -169,7 +169,7 @@ var themeMenus = {};
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2019/04/04/Hello-Dasom/">Hello,Dasom</a>
+      <a class="article-title" href="/2019/04/04/01-Hexo/">01_Hexo</a>
     </h1>
   
 
@@ -177,20 +177,122 @@ var themeMenus = {};
     
     <div class="article-meta">
       
-	Posted on <a href="/2019/04/04/Hello-Dasom/" class="article-date">
-	  <time datetime="2019-04-04T03:53:01.000Z" itemprop="datePublished">April 4, 2019</time>
+	Posted on <a href="/2019/04/04/01-Hexo/" class="article-date">
+	  <time datetime="2019-04-04T05:03:09.000Z" itemprop="datePublished">4월 4, 2019</time>
 	</a>
 
       
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="HEXO-블로그-만들기"><a href="#HEXO-블로그-만들기" class="headerlink" title="HEXO 블로그 만들기"></a>HEXO 블로그 만들기</h2><h3 id="1-Node-js와-NPM-설치"><a href="#1-Node-js와-NPM-설치" class="headerlink" title="1. Node.js와 NPM 설치"></a>1. Node.js와 NPM 설치</h3><ul>
+<li>Node.js</li>
+</ul>
+<p>서버 사이드를 JavaScript로 구현할 수 있게 만든 런타임</p>
+<ul>
+<li>NPM</li>
+</ul>
+<p>Node.js기반의 모듈을 모아둔 집합</p>
+<p><a href="https://nodejs.org/ko/" target="_blank" rel="noopener">https://nodejs.org/ko/</a></p>
+<hr>
+<h3 id="2-Hexo-설치"><a href="#2-Hexo-설치" class="headerlink" title="2. Hexo 설치"></a>2. Hexo 설치</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="3-블로그-생성"><a href="#3-블로그-생성" class="headerlink" title="3. 블로그 생성"></a>3. 블로그 생성</h3><p>생성할 폴더에 접근 후 </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init myBlog</span><br><span class="line">$ <span class="built_in">cd</span> myBlog</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
+<p><img src="https://user-images.githubusercontent.com/36959292/54869831-83756500-4de1-11e9-97e5-1f472870035f.png" alt="1553361798946"></p>
+<ul>
+<li>node_modules : 기본적인 node.js 모듈</li>
+<li>scaffolds : 페이지를 구성할 기본 markdown 파일</li>
+<li>source : 작성한 파일등 리소스</li>
+<li>theme : 테마</li>
+<li>.gitignore : github에 업로드 할때 제외할 파일 목록 정의</li>
+<li>_config.yml : 블로그의 옵션 설정</li>
+</ul>
+<hr>
+<h3 id="4-github에-연동하기"><a href="#4-github에-연동하기" class="headerlink" title="4. github에 연동하기"></a>4. github에 연동하기</h3><p>자동으로 github에 업로드</p>
+<ul>
+<li><p>github repo를 만들때 주소를 JHyunB.github.io 로 함 </p>
+</li>
+<li><p>_config.yml 파일 열고 아래처럼 수정</p>
+</li>
+</ul>
+<p><img src="https://user-images.githubusercontent.com/36959292/54869834-99832580-4de1-11e9-8c4d-fd21267cf69e.png" alt="1553362281981"></p>
+<ul>
+<li>업로드하기 위한 모듈 설치</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<ul>
+<li>hexo deploy 명령어 수행시 위에서 작성한 주소로 업로드</li>
+</ul>
+<hr>
+<h3 id="5-포스트-생성"><a href="#5-포스트-생성" class="headerlink" title="5. 포스트 생성"></a>5. 포스트 생성</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new post first-post</span><br></pre></td></tr></table></figure>
+<p>source/_posts 경로에 myfirstpost.md 생성</p>
+<hr>
+<h3 id="6-빌드"><a href="#6-빌드" class="headerlink" title="6. 빌드"></a>6. 빌드</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate 또는 hexo g</span><br></pre></td></tr></table></figure>
+<ul>
+<li>hexo g 가능</li>
+<li>public 폴더가 생성됨</li>
+</ul>
+<p><img src="https://user-images.githubusercontent.com/36959292/54869839-a9026e80-4de1-11e9-8f7f-5cac8c91eaf1.png" alt="1553362948919"></p>
+<ul>
+<li>2019 : 포스트는 날짜별로 생성</li>
+<li>css : 테마에 맞게 생성</li>
+<li>index.html  : myfirstpost가 변경됨</li>
+</ul>
+<hr>
+<h3 id="7-로컬-테스트"><a href="#7-로컬-테스트" class="headerlink" title="7. 로컬 테스트"></a>7. 로컬 테스트</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<ul>
+<li>내장 서버를 구동 후  <strong><a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a></strong>로 접속</li>
+</ul>
+<hr>
+<h3 id="8-github에-업로드"><a href="#8-github에-업로드" class="headerlink" title="8. github에 업로드"></a>8. github에 업로드</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy 또는 hexo d</span><br></pre></td></tr></table></figure>
+<ul>
+<li>hexo d 가능</li>
+</ul>
+<hr>
+<h3 id="9-블로그-방문"><a href="#9-블로그-방문" class="headerlink" title="9. 블로그 방문"></a>9. 블로그 방문</h3><ul>
+<li>내장서버를 종료해도 <a href="https://jhyunb.github.io/로" target="_blank" rel="noopener">https://jhyunb.github.io/로</a> 접속가능</li>
+</ul>
+<hr>
+<h3 id="10-테마적용"><a href="#10-테마적용" class="headerlink" title="10. 테마적용"></a>10. 테마적용</h3><ul>
+<li><p><a href="https://hexo.io/themes/" target="_blank" rel="noopener">https://hexo.io/themes/</a> 에서 원하는 테마 찾기</p>
+</li>
+<li><p>github에서 다운받아 theme폴더에 저장</p>
+<p><img src="https://user-images.githubusercontent.com/36959292/55128335-8e6c2480-5156-11e9-8fb9-1fe599fe5929.PNG" alt="캡처"></p>
+</li>
+<li><p>hexo _config.yml 파일 theme: 변경</p>
+</li>
+<li>테마마다 추가 설정이 다를 수 있으므로 해당 테마 github 확인</li>
+</ul>
+<hr>
+<h3 id="11-Organization을-통한-여러-사용자의-포스팅"><a href="#11-Organization을-통한-여러-사용자의-포스팅" class="headerlink" title="11. Organization을 통한 여러 사용자의 포스팅"></a>11. Organization을 통한 여러 사용자의 포스팅</h3><p><img src="https://user-images.githubusercontent.com/21974799/55216796-129ad680-5241-11e9-9990-2f04f394dce2.JPG" alt="cap7"></p>
+<ul>
+<li>여러 사용자가 같은 프로젝트를 관리하기 위한 그룹 계정인 Organization을 생성 한다.</li>
+</ul>
+<p><img src="https://user-images.githubusercontent.com/21974799/55216850-3e1dc100-5241-11e9-86ba-422e557ba3bb.JPG" alt="cap1"></p>
+<ul>
+<li>올려진 서버를 clone해서 받은 뒤 (이후 pull을 통해서 항상 최신 버전으로 업데이트 한다.)</li>
+</ul>
+<p><img src="https://user-images.githubusercontent.com/21974799/55216867-54c41800-5241-11e9-8d67-9f08f4651b7e.JPG" alt="cap2"><br><img src="https://user-images.githubusercontent.com/21974799/55216911-71605000-5241-11e9-8e63-5f3c62d10122.JPG" alt="cap3"><br><img src="https://user-images.githubusercontent.com/21974799/55216938-850bb680-5241-11e9-8011-763c8fe24a72.JPG" alt="cap4"></p>
+<ul>
+<li>위와 같은 명령어를 쳐서 필요한 것들을 받고</li>
+</ul>
+<p><img src="https://user-images.githubusercontent.com/21974799/55217019-b97f7280-5241-11e9-9ab2-a3c723454445.JPG" alt="cap5"><br><img src="https://user-images.githubusercontent.com/21974799/55217018-b8e6dc00-5241-11e9-84df-c4d362ea53cf.JPG" alt="cap6"></p>
+<ul>
+<li>포스팅 후 배포하면 된다. (로컬 서버를 통해서 제대로 됐는지 확인하고 commit - push를 해주자.)</li>
+</ul>
+
       
     </div>
     <footer class="entry-meta entry-footer">
       
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/categories/Hexo/">Hexo</a>
+
       
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
+
       
             
       
@@ -204,7 +306,7 @@ var themeMenus = {};
     
 
   
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-02-Park-Git" class="article article-type-post" itemscope itemprop="blogPost">
   <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
     
     
@@ -212,7 +314,7 @@ var themeMenus = {};
         
   
     <h1 class="thumb" itemprop="name">
-      <a class="article-title" href="/2019/04/04/hello-world/">Hello World</a>
+      <a class="article-title" href="/2019/04/04/02-Park-Git/">02_Park_Git</a>
     </h1>
   
 
@@ -220,23 +322,476 @@ var themeMenus = {};
     
     <div class="article-meta">
       
-	Posted on <a href="/2019/04/04/hello-world/" class="article-date">
-	  <time datetime="2019-04-04T02:04:01.774Z" itemprop="datePublished">April 4, 2019</time>
+	Posted on <a href="/2019/04/04/02-Park-Git/" class="article-date">
+	  <time datetime="2019-04-04T04:52:54.000Z" itemprop="datePublished">4월 4, 2019</time>
 	</a>
 
       
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <h2 id="💡-Intro"><a href="#💡-Intro" class="headerlink" title="💡 Intro"></a>💡 Intro</h2><p>Git Branch 관련된 자료 </p>
+<hr>
+<h2 id="💡-Index"><a href="#💡-Index" class="headerlink" title="💡 Index"></a>💡 Index</h2><p>👉 Git  </p>
+<p>👉 Branch CMD</p>
+<p>👉 Branch Practice</p>
+<hr>
+<h2 id="💡-Git-Base"><a href="#💡-Git-Base" class="headerlink" title="💡 Git Base"></a>💡 Git Base</h2><h3 id="👉-PDF-Attached"><a href="#👉-PDF-Attached" class="headerlink" title="👉 PDF Attached"></a>👉 PDF Attached</h3><p><strong><a href="../pdf/Git.pdf">📃 PDF FILE </a></strong></p>
+<hr>
+<h2 id="💡-Branch-CMD"><a href="#💡-Branch-CMD" class="headerlink" title="💡 Branch CMD"></a>💡 Branch CMD</h2><h3 id="👉-Why-Using-the-Branch-system"><a href="#👉-Why-Using-the-Branch-system" class="headerlink" title="👉 Why Using the Branch system ?"></a>👉 Why Using the Branch system ?</h3><p><a href="https://backlog.com/git-tutorial/kr/stepup/stepup1_5.html" target="_blank" rel="noopener">“A successful Git branching model” 컬럼</a></p>
+<p>원문 : <a href="http://nvie.com/posts/a-successful-git-branching-model/" target="_blank" rel="noopener">http://nvie.com/posts/a-successful-git-branching-model/</a></p>
+<h3 id="👉-CRUD"><a href="#👉-CRUD" class="headerlink" title="👉 CRUD"></a>👉 CRUD</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">### Create and Switch </span></span><br><span class="line">$ git branch iss53 <span class="comment"># 브런치 만들고 </span></span><br><span class="line">$ git checkout iss53 <span class="comment"># 전환</span></span><br><span class="line"><span class="comment"># 두개를 하나로 줄이면</span></span><br><span class="line">$ git checkout -b iss53</span><br><span class="line"></span><br><span class="line"><span class="comment">### Push</span></span><br><span class="line">$ git checkout iss53</span><br><span class="line">$ git add -u </span><br><span class="line">$ git commit -m <span class="string">"YOUR MESSAGE"</span></span><br><span class="line">$ git push origin iss53</span><br><span class="line"></span><br><span class="line"><span class="comment">### Merge</span></span><br><span class="line">$ git checkout master</span><br><span class="line">$ git merge iss53</span><br><span class="line"></span><br><span class="line"><span class="comment">### Branch List</span></span><br><span class="line">$ git Branch</span><br><span class="line"></span><br><span class="line"><span class="comment">### Delete</span></span><br><span class="line">$ git branch -d iss53</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="💡-Branch-Practice"><a href="#💡-Branch-Practice" class="headerlink" title="💡 Branch Practice"></a>💡 Branch Practice</h2><h3 id="👉-To-Do"><a href="#👉-To-Do" class="headerlink" title="👉 To-Do"></a>👉 To-Do</h3><ol>
+<li>Master 에서 아무 Py 파일 하나 만들어서 tracking 후</li>
+<li>dev 브런치를 판다. </li>
+<li>이동해서 1번에서 만든 파일을 수정 </li>
+<li>master Branch에 merge </li>
+</ol>
+<hr>
+<h2 id="💡-Ref-Link"><a href="#💡-Ref-Link" class="headerlink" title="💡 Ref Link"></a>💡 Ref Link</h2><ul>
+<li><a href="https://backlog.com/git-tutorial/kr/stepup/stepup1_1.html" target="_blank" rel="noopener">누구나 쉽게 이해할수있는 Git 입문</a></li>
+<li><a href="https://git-scm.com/book/ko/v1/Git-%EB%B8%8C%EB%9E%9C%EC%B9%98-%EB%B8%8C%EB%9E%9C%EC%B9%98%EC%99%80-Merge%EC%9D%98-%EA%B8%B0%EC%B4%88" target="_blank" rel="noopener">Git-scm</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/categories/Git/">Git</a>
+
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
+
+      
+            
+      
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+    
+
+  
+    <article id="post-01-Kim-Git" class="article article-type-post" itemscope itemprop="blogPost">
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2019/04/04/01-Kim-Git/">01_Kim_Git</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	Posted on <a href="/2019/04/04/01-Kim-Git/" class="article-date">
+	  <time datetime="2019-04-04T04:52:42.000Z" itemprop="datePublished">4월 4, 2019</time>
+	</a>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="git-test"><a href="#git-test" class="headerlink" title="git_test"></a>git_test</h1><ul>
+<li>how to git pull request ? </li>
+</ul>
+<h2 id="1-Fork"><a href="#1-Fork" class="headerlink" title="1. Fork"></a>1. Fork</h2><ul>
+<li>타겟 프로젝트의 저장소를 자신의 저장소로 Fork<img src="/2019/04/04/01-Kim-Git/1.png" title="[1]">
+<img src="/2019/04/04/01-Kim-Git/2.png" title="[2]">
+</li>
+</ul>
+<h2 id="2-clone-remote-설정"><a href="#2-clone-remote-설정" class="headerlink" title="2. clone, remote 설정"></a>2. clone, remote 설정</h2><ul>
+<li><p>Fork한 저장소를 로컬에 clone한다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git clone &apos;https://github.com/youhyeoneee/git_test.git&apos;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>로컬 저장소에 원격 저장소를 추가한다. </p>
+<ul>
+<li>원본 프로젝트 저장소 (직접 추가 필요)</li>
+<li>fork한 로컬 프로젝트 (clone을 하면 기본적으로 origin이라는 별명으로 추가되어있다.)</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#원본 프로젝트 저장소를 원격 저장소로 추가</span><br><span class="line">$ git remote add hyeong(별명) https://github.com/DevHyung/git_test</span><br><span class="line"></span><br><span class="line">#원격 저장소 설정 현황 확인 </span><br><span class="line">$ git remote -v</span><br><span class="line"></span><br><span class="line">hyeong  https://github.com/DevHyung/git_test (fetch)</span><br><span class="line">hyeong  https://github.com/DevHyung/git_test (push)</span><br><span class="line">origin  https://github.com/youhyeoneee/git_test.git (fetch)</span><br><span class="line">origin  https://github.com/youhyeoneee/git_test.git (push)</span><br></pre></td></tr></table></figure>
+<h2 id="3-branch-생성"><a href="#3-branch-생성" class="headerlink" title="3. branch 생성"></a>3. branch 생성</h2><ul>
+<li>자신의 로컬 컴퓨터에서 코드를 추가하는 작업은 branch를 만들어서 진행한다.</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># youhyeon 이라는 이름의 branch를 생성한다.</span><br><span class="line">$ git checkout -b youhyeon</span><br><span class="line">Switched to a new branch &apos;youhyeon&apos;</span><br><span class="line"></span><br><span class="line"># 이제 2개의 브랜치가 존재한다. </span><br><span class="line">$ git branch</span><br><span class="line">  master</span><br><span class="line">* youhyeon</span><br></pre></td></tr></table></figure>
+<h2 id="4-수정-작업-후-add-commit-push"><a href="#4-수정-작업-후-add-commit-push" class="headerlink" title="4. 수정 작업 후 add, commit, push"></a>4. 수정 작업 후 add, commit, push</h2><ul>
+<li><p>수정 사항을 add, commit, push를 통해서 자신의 guthub repository(origin)에 반영한다.</p>
+</li>
+<li><p><strong>주의사항</strong> puch 진행시에 branch 이름을 명시해주어야 한다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"># youhyeon 브랜치의 수정 내역을 origin으로 푸시한다.</span><br><span class="line">$ git push origin youhyeon</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">## 5. Pull Request 생성</span><br><span class="line"></span><br><span class="line">+ push 완료 후 본인 계정의 github 저장소에 들어오면 **Compare &amp; pull request** 버튼이 활성화 되어있다.</span><br><span class="line">&#123;% asset_img 3.png [3]%&#125;</span><br><span class="line"></span><br><span class="line">+ 해당 버튼을 선택하여 메시지를 작성하고 PR을 생성한다. </span><br><span class="line"></span><br><span class="line">## 6. 코드리뷰, Merge Pull Request</span><br><span class="line"></span><br><span class="line">+ PR을 받은 원본 저장소 관리자는 코드 변경 내역을 확인하고 Merge 여부를 결정한다.</span><br><span class="line"></span><br><span class="line">## 7. Merge 이후 동기화 및 branch 삭제</span><br><span class="line"></span><br><span class="line">+ 원본 저장소에 Merge가 완료되면 로컬 코드와 원본 저장소의 코드를 동기화한다. </span><br><span class="line"></span><br><span class="line">+ 작업하던 로컬의 branch를 삭제한다.</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>#코드 동기화<br>$ git pull hyeong</p>
+<p>#브랜치 삭제<br>$ git branch -d youhyeon<br><code>`</code></p>
+<ul>
+<li>나중에 추가로 작업할 일이 있다면 <strong>git pull hyeong(remote 별명)</strong> 명령을 통해<br>원본 저장소와 동기화를 진행하고 3~7을 반복한다. </li>
+</ul>
+<h2 id="출처-https-wayhome25-github-io-git-2017-07-08-git-first-pull-request-story"><a href="#출처-https-wayhome25-github-io-git-2017-07-08-git-first-pull-request-story" class="headerlink" title="출처 : https://wayhome25.github.io/git/2017/07/08/git-first-pull-request-story/"></a>출처 : <a href="https://wayhome25.github.io/git/2017/07/08/git-first-pull-request-story/" target="_blank" rel="noopener">https://wayhome25.github.io/git/2017/07/08/git-first-pull-request-story/</a></h2>
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/categories/Git/">Git</a>
+
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
+
+      
+            
+      
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+    
+
+  
+    <article id="post-02-Numpy" class="article article-type-post" itemscope itemprop="blogPost">
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2019/04/04/02-Numpy/">02_Numpy</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	Posted on <a href="/2019/04/04/02-Numpy/" class="article-date">
+	  <time datetime="2019-04-04T04:36:05.000Z" itemprop="datePublished">4월 4, 2019</time>
+	</a>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-numpy"><a href="#1-numpy" class="headerlink" title="1. numpy"></a>1. numpy</h2><ul>
+<li><p>numpy는 과학계산을 위한 라이브러리 </p>
+</li>
+<li><p>다차원 배열을 처리하는데  유용한 기능을 제공</p>
+</li>
+<li><p>리스트나 튜플보다 훨씬 더 빨리 배열을 처리</p>
+</li>
+</ul>
+<h2 id="2-배열만들기-1-array"><a href="#2-배열만들기-1-array" class="headerlink" title="2. 배열만들기(1):array()"></a>2. 배열만들기(1):array()</h2><ul>
+<li>리스트와 튜플로부터 배열 생성가능</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = np.array([[<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>], [<span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span>, <span class="number">8</span>]])</span><br><span class="line">print(a.ndim) <span class="comment">#디멘션 반환 2</span></span><br><span class="line">print(a.size) <span class="comment">#배열에 있는 총 개수 반환 8</span></span><br><span class="line">print(a.shape) <span class="comment">#각 차원의 크기 반환 (2,4)</span></span><br></pre></td></tr></table></figure>
+<h2 id="3-배열만들기-2-arange"><a href="#3-배열만들기-2-arange" class="headerlink" title="3. 배열만들기(2):arange()"></a>3. 배열만들기(2):arange()</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">b = np.arange(<span class="number">10</span>) <span class="comment">#[0 1 2 3 4 5 6 7 8 9]</span></span><br><span class="line">b= np.arange(<span class="number">7</span>, <span class="number">10</span>) <span class="comment">#[7 8 9]</span></span><br><span class="line">b = np.arange(<span class="number">0</span>, <span class="number">10</span>, <span class="number">2</span>) <span class="comment">#[0 2 4 6 8]</span></span><br><span class="line">b = np.arange(<span class="number">2.0</span>, <span class="number">3.0</span>, <span class="number">0.3</span>) <span class="comment">#[2.  2.3 2.6 2.9]</span></span><br></pre></td></tr></table></figure>
+<h2 id="4-배열만들기-3-zeros-ones-random"><a href="#4-배열만들기-3-zeros-ones-random" class="headerlink" title="4. 배열만들기(3):zeros(), ones(), random()"></a>4. 배열만들기(3):zeros(), ones(), random()</h2><ul>
+<li>zeros() : 모든 값이 0인 배열 반환</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">c = np.zeros((<span class="number">2</span>, <span class="number">4</span>))</span><br></pre></td></tr></table></figure>
+<p>[[0. 0. 0. 0.]<br> [0. 0. 0. 0.]]</p>
+<ul>
+<li>ones() : 모든 값이 1인 배열 반환</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">c = np.ones((<span class="number">3</span>, <span class="number">3</span>))</span><br></pre></td></tr></table></figure>
+<p>[[1. 1. 1.]<br> [1. 1. 1.]<br> [1. 1. 1.]]</p>
+<ul>
+<li>random() : 0.0과 0.1 사이의 임의 값을 채운 배열 반환</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">c = np.random.random((<span class="number">2</span>, <span class="number">4</span>))</span><br></pre></td></tr></table></figure>
+<p>[[0.89451067 0.46158826 0.32610563 0.20057699]<br> [0.58088544 0.93966855 0.23445485 0.72952238]]</p>
+<h2 id="5-배열-모양-바꾸기-reshape"><a href="#5-배열-모양-바꾸기-reshape" class="headerlink" title="5. 배열 모양 바꾸기 : reshape()"></a>5. 배열 모양 바꾸기 : reshape()</h2><ul>
+<li>배열의 랭크 크기의 곱이 총 배열 수와 같아야 함</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">d = np.arange(<span class="number">0</span>,<span class="number">10</span>)</span><br><span class="line">d = d.reshape(<span class="number">2</span>,<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+<p>[[0 1 2 3 4]<br> [5 6 7 8 9]]</p>
+<h2 id="6-항목-얻기"><a href="#6-항목-얻기" class="headerlink" title="6. 항목 얻기 : []"></a>6. 항목 얻기 : []</h2><ul>
+<li>1차원 배열은 리스트처럼 작동</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">e = np.arange(<span class="number">0</span>,<span class="number">10</span>)</span><br><span class="line">print(e[<span class="number">-1</span>], e[<span class="number">7</span>]) <span class="comment">#9 7</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>2차원은 리스트와 다르다</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">e.shape= (<span class="number">2</span>,<span class="number">5</span>)</span><br><span class="line">print(e[<span class="number">1</span>,<span class="number">1</span>])</span><br><span class="line">e = [[<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>],[<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]]</span><br><span class="line">print(e[<span class="number">1</span>,<span class="number">1</span>]) <span class="comment">#에러 발생</span></span><br></pre></td></tr></table></figure>
+<h2 id="7-배열-연산"><a href="#7-배열-연산" class="headerlink" title="7. 배열 연산"></a>7. 배열 연산</h2><ul>
+<li>더하기, 빼기, 곱하기 동시연산 가능</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> numpy <span class="keyword">import</span> *</span><br><span class="line">a = arange(<span class="number">0</span>,<span class="number">3</span>) <span class="comment">#[0 1 2]</span></span><br><span class="line">a *= <span class="number">3</span> <span class="comment">#[0 3 6]</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>@ : 행렬곱</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = np.array([[<span class="number">1</span>,<span class="number">2</span>],[<span class="number">3</span>,<span class="number">4</span>]])</span><br><span class="line">b = a@a</span><br></pre></td></tr></table></figure>
+<h2 id="8-실습"><a href="#8-실습" class="headerlink" title="8. 실습"></a>8. 실습</h2><ul>
+<li>랜덤 분포 생성</li>
+<li>파일 입출력</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">mean = <span class="number">0</span> <span class="comment">#평균</span></span><br><span class="line">std = <span class="number">5</span> <span class="comment">#표준편차</span></span><br><span class="line">arr1 = np.random.normal(mean, std, [<span class="number">5</span>, <span class="number">5</span>]) <span class="comment">#정규분포</span></span><br><span class="line">arr2 = np.random.exponential(<span class="number">2</span>, [<span class="number">5</span>, <span class="number">5</span>]) <span class="comment">#지수분포</span></span><br><span class="line">arr3 = arr1 * arr2</span><br><span class="line">print(arr3)</span><br><span class="line">np.save(<span class="string">"./data"</span>, arr3) <span class="comment">#data.npy로 저장</span></span><br><span class="line"></span><br><span class="line">arr = np.load(<span class="string">"./data.npy"</span>) <span class="comment">#불러오기</span></span><br><span class="line">devArr = np.vsplit(arr, <span class="number">5</span>) <span class="comment">#가로로 자르기</span></span><br><span class="line">print(devArr[<span class="number">0</span>][<span class="number">0</span>])</span><br><span class="line">plt.plot(devArr[<span class="number">0</span>][<span class="number">0</span>]) <span class="comment">#그래프그리기</span></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/categories/Python/">Python</a>
+
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+      
+            
+      
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+    
+
+  
+    <article id="post-01-Pandas" class="article article-type-post" itemscope itemprop="blogPost">
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2019/04/04/01-Pandas/">01_Pandas</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	Posted on <a href="/2019/04/04/01-Pandas/" class="article-date">
+	  <time datetime="2019-04-04T04:35:51.000Z" itemprop="datePublished">4월 4, 2019</time>
+	</a>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-Pandas"><a href="#1-Pandas" class="headerlink" title="1. Pandas"></a>1. Pandas</h2><p>Python Data Analysis Library</p>
+<ul>
+<li><p>파이썬에서 사용하는 데이터분석 라이브러리</p>
+</li>
+<li><p>행과 열로 이루어진 데이터 객체를 만들어 다룰 수 있게 함.</p>
+</li>
+<li><p>보다 안정적으로 대용량의 데이터들을 처리하는데 매우 편리한 도구</p>
+</li>
+</ul>
+<h2 id="2-Pandas-자료-구조"><a href="#2-Pandas-자료-구조" class="headerlink" title="2. Pandas 자료 구조"></a>2. Pandas 자료 구조</h2><ul>
+<li><p>1차원 자료구조 : Series</p>
+</li>
+<li><p>2차원 자료구조 : DataFrame</p>
+</li>
+<li><p>3차원 자료구조 : Panel</p>
+</li>
+</ul>
+<h3 id="1-Series"><a href="#1-Series" class="headerlink" title="(1) Series"></a>(1) Series</h3><p> Series is a one-dimensional labeled array capable of holding any data type (integers, strings, floating point numbers, Python objects, etc.). </p>
+<ul>
+<li><p>가장 간단한 1차원 자료구조</p>
+</li>
+<li><p>Series는 배열/리스트와 같은 일련의 시퀀스 데이타를 받아들인다.</p>
+</li>
+<li><p>별도의 인덱스 레이블을 지정하지 않으면 자동적으로 0부터 시작되는 디폴트 정수<br>인덱스를 사용한다.</p>
+</li>
+<li><p>선언 &gt;&gt;&gt; s = pd.Series(data, index=index)</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import pandas as pd</span><br><span class="line"></span><br><span class="line">obj = pd.Series([4, 7, -5, 3])</span><br></pre></td></tr></table></figure>
+<h3 id="2-DataFrame"><a href="#2-DataFrame" class="headerlink" title="(2) DataFrame"></a>(2) DataFrame</h3><p> DataFrame is a 2-dimensional labeled data structure with columns of potentially different types. You can think of it like a spreadsheet or SQL table, or a dict of Series objects. It is generally the most commonly used pandas object. </p>
+<ul>
+<li><p>2차원 자료구조</p>
+</li>
+<li><p>DataFrame는 행과 열이 있는 테이블 데이타(Tabular Data)를 받아들인다. </p>
+</li>
+<li><p>이는 python의 dictionary 또는 numpy의 array로 정의할 수 있다.</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">data = &#123;&apos;name&apos; : [&apos;Beomwoo&apos;, &apos;Beomwoo&apos;, &apos;Beomwoo&apos;, &apos;Kim&apos;, &apos;Park&apos;], &apos;year&apos;:[2016, 2014, 2015, 2016, 2017]&#125;, &apos;points&apos; : [1.5, 1.7, 3.6, 2.4, 2.9]&#125;</span><br><span class="line"></span><br><span class="line">df = pd.DataFrame(data)</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th style="text-align:left"><center>name</center></th>
+<th style="text-align:center"><center>year</center></th>
+<th style="text-align:right"><center>points</center></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Beomwoo</td>
+<td style="text-align:center"><center>2016 </center></td>
+<td style="text-align:right">1.5</td>
+</tr>
+<tr>
+<td style="text-align:left">Beomwoo</td>
+<td style="text-align:center"><center>2014 </center></td>
+<td style="text-align:right">1.7</td>
+</tr>
+<tr>
+<td style="text-align:left">Beomwoo</td>
+<td style="text-align:center"><center>2015 </center></td>
+<td style="text-align:right">3.6</td>
+</tr>
+<tr>
+<td style="text-align:left">Kim</td>
+<td style="text-align:center"><center>2016 </center></td>
+<td style="text-align:right">2.4</td>
+</tr>
+<tr>
+<td style="text-align:left">Park</td>
+<td style="text-align:center"><center>2017 </center></td>
+<td style="text-align:right">2.9</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3-Panel"><a href="#3-Panel" class="headerlink" title="(3) Panel"></a>(3) Panel</h3><p> Panel is a somewhat less-used, but still important container for 3-dimensional data. The term panel data is derived from econometrics and is partially responsible for the name pandas: pan(el)-da(ta)-s. The names for the 3 axes are intended to give some semantic meaning to describing operations involving panel data and, in particular, econometric analysis of panel data.</p>
+<ul>
+<li><p>3차원 자료구조</p>
+</li>
+<li><p>Panel은 Axis 0 (items), Axis 1 (major_axis), Axis 2 (minor_axis) 등 3개의 축을 가지고 있다</p>
+</li>
+<li><p>Axis 0은 그 한 요소가 2차원의 DataFrame 에 해당되며, Axis 1은 DataFrame의 행(row)에 해당되고, Axis 2는 DataFrame의 열(column)에 해당된다.</p>
+</li>
+</ul>
+<p>+아래 예제는 numpy를 사용하여 3차원 난수를 발생시킨 후, 이를 pandas.Panel()에 적용한 예이다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">data = np.random.rand(2,3,4)</span><br><span class="line">p = pd.Panel(data)</span><br></pre></td></tr></table></figure></p>
+<p>2(items) <em> 3(major axis) </em> 4(miner axis)  크기의 Panel 객체가 생성되었음을 알 수 있다.<br>Panel 객체 p로부터 p[0]을 조회하면, Axis 0의 첫번째 요소인 DataFrame이 출력됨을 볼 수 있다.</p>
+<h2 id="3-데이터-액세스"><a href="#3-데이터-액세스" class="headerlink" title="3. 데이터 액세스"></a>3. 데이터 액세스</h2><ul>
+<li><p>Indexing, arrtibute 사용 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df[&apos;year&apos;] #year column 출력 </span><br><span class="line">df.year #위에와 같은 의미</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Boolean indexing : 특정 조건의 데이터만 필터링 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df[df[&apos;year&apos;]&gt;2016] #df자료에서 year이 2016보다 큰 행만 출력</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>데이터 양이 많은 경우</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df.head() #기본적으로 앞 5개, 데이터의 개수를 인자로 넣으면 그 만큼의 데이터를 보여준다.</span><br><span class="line">df.tail() #기본적으로 뒤 5개, 위와 같다.</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>다양한 연산 함수 : sum(), mean(), max(), min(), describe() …</p>
+</li>
+<li><p>1주차 피드백 : 첫번째 행에서 첫번째 열 뽑기 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print(df.loc[df.index[0], df.columns[0]]) #.loc는 [인덱스(행)명, 칼럼(열)명]으로 접근 가능하다</span><br><span class="line">print(df.iloc[0,0]) #.iloc는 index숫자로써 가져온다.</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="4-외부-데이터-읽고-쓰기"><a href="#4-외부-데이터-읽고-쓰기" class="headerlink" title="4. 외부 데이터 읽고 쓰기"></a>4. 외부 데이터 읽고 쓰기</h2><ul>
+<li>pandas는 CSV 파일, 텍스트 파일, 엑셀 파일, SQL 데이타베이스, HDF5 포맷 등 다양한 외부 리소스에 데이타를 읽고 쓸 수 있는 기능을 제공</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df = pd.read_excel(&apos;foo.xlsx&apos;, &apos;Sheet1&apos;, index_col=None, na_values=[&apos;NA&apos;]) #읽기</span><br><span class="line">df = pd.to_excel(&apos;foo.xlsx&apos;, sheet_name=&apos;Sheet1&apos;) #쓰기</span><br></pre></td></tr></table></figure>
+<h2 id="참고-출처"><a href="#참고-출처" class="headerlink" title="참고 출처"></a>참고 출처</h2><ul>
+<li><p><a href="http://pythonstudy.xyz/python/article/408-pandas-%EB%8D%B0%EC%9D%B4%ED%83%80-%EB%B6%84%EC%84%9D" target="_blank" rel="noopener">예제로 배우는 Python 프로그래밍 : Pandas데이터 분석</a></p>
+</li>
+<li><p><a href="https://doorbw.tistory.com/172" target="_blank" rel="noopener">Pandas 기초 정리</a></p>
+</li>
+<li><p><a href="https://pandas.pydata.org/pandas-docs/stable/getting_started/dsintro.html" target="_blank" rel="noopener">pandas 데이터 구조 소개</a></p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/categories/Python/">Python</a>
+
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+      
+            
+      
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+    
+
+  
+    <article id="post-captcha-solver-study" class="article article-type-post" itemscope itemprop="blogPost">
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2019/04/04/captcha-solver-study/">Captcha Solver Study</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	Posted on <a href="/2019/04/04/captcha-solver-study/" class="article-date">
+	  <time datetime="2019-04-04T02:04:01.774Z" itemprop="datePublished">4월 4, 2019</time>
+	</a>
+
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="2019-captcha-solver-study"><a href="#2019-captcha-solver-study" class="headerlink" title="2019-captcha-solver-study"></a>2019-captcha-solver-study</h1><p>based on ML, target is the captcha version 1.0 that is OCR character input for protect the robots.<br><br>we making the captch-solver by study that start at <strong>2019-03-11</strong> <br><br>Members, i wrote the above </p>
+<h2 id="💡-Syllabus"><a href="#💡-Syllabus" class="headerlink" title="💡 Syllabus"></a>💡 Syllabus</h2><h3 id="👉-Background"><a href="#👉-Background" class="headerlink" title="👉 Background"></a>👉 Background</h3><ul>
+<li>[X] pandas, numpy mini project (03/22)<ul>
+<li>Pandas : <code>YHKim</code> </li>
+<li>Numpy : <code>JHBaek</code>, <code>DWShin</code> </li>
+</ul>
+</li>
+<li>[X] HEXO blog for presentation the study content (03/29)<ul>
+<li>HEXO : <code>JHBaek</code>, <code>DWShin</code> </li>
+</ul>
+</li>
+<li>[X] git branch, pull requests, issue template (03/29)<ul>
+<li>GIT  : <code>HJPark</code>, <code>YHKim</code></li>
+</ul>
+</li>
+<li style="list-style: none"><input type="checkbox"> <strong>advanced Git ( –no-ff option, branch, fast forward, etc..)  (Expected)</strong><ul>
+<li><code>JHBaek</code>, <code>DWShin</code>, <code>HJPark</code>, <code>YHKim</code></li>
+</ul>
+</li>
+<li style="list-style: none"><input type="checkbox"> MNIST, OCR basic example code </li>
+<li style="list-style: none"><input type="checkbox"> Basing tensorflow code + Mathmatical knowledge</li>
+<li style="list-style: none"><input type="checkbox"> Scrapping for Data collection</li>
+<li style="list-style: none"><input type="checkbox"> Basic web page for Data labeling (if need to JS, include ts,node JS)</li>
+</ul>
+<h3 id="👉-Project"><a href="#👉-Project" class="headerlink" title="👉 Project"></a>👉 Project</h3><ul>
+<li style="list-style: none"><input type="checkbox"> OCR or anti-captcha PAPER seminar</li>
+<li style="list-style: none"><input type="checkbox"> Using by OCR or tesseract ? evaluate score </li>
+<li style="list-style: none"><input type="checkbox"> Using by MNIST evaluate score</li>
+<li style="list-style: none"><input type="checkbox"> Search the another ways for solving a captcha</li>
+</ul>
+<h3 id="👉-Util"><a href="#👉-Util" class="headerlink" title="👉 Util"></a>👉 Util</h3><ul>
+<li style="list-style: none"><input type="checkbox"> Using by <code>Docker</code></li>
+<li style="list-style: none"><input type="checkbox"> PM Tool (not yet determined)</li>
+</ul>
+<h2 id="💡-Refer"><a href="#💡-Refer" class="headerlink" title="💡 Refer"></a>💡 Refer</h2><p>👉 <a href="https://github.com/hwalsuklee/awesome-deep-text-detection-recognition?fbclid=IwAR0QwCcC-ns99jlRql7IuSCc3qXaWswKreXdbu2VYun_3q3muXQGvKVmfxk" target="_blank" rel="noopener">📃 awesome-deep-text-detection-recognition</a></p>
+<h2 id="💡-Rule"><a href="#💡-Rule" class="headerlink" title="💡 Rule"></a>💡 Rule</h2><ul>
+<li><strong>Weekly meetings are Thursday</strong> </li>
+<li>Commit message example : <code>(verb) (what do you do ) at (file or folder )</code><br></li>
+</ul>
 
       
     </div>
@@ -375,8 +930,8 @@ var themeMenus = {};
               <div class="widget-entry-summary" style="margin: 0;">
             
 
-              <h6 style="margin: 0;"><a href="/2019/04/04/Hello-Dasom/">Hello,Dasom</a></h6>
-              <span>April 4, 2019</span>
+              <h6 style="margin: 0;"><a href="/2019/04/04/01-Hexo/">01_Hexo</a></h6>
+              <span>4월 4, 2019</span>
             </div>
 
           </li>
@@ -387,8 +942,56 @@ var themeMenus = {};
               <div class="widget-entry-summary" style="margin: 0;">
             
 
-              <h6 style="margin: 0;"><a href="/2019/04/04/hello-world/">Hello World</a></h6>
-              <span>April 4, 2019</span>
+              <h6 style="margin: 0;"><a href="/2019/04/04/02-Park-Git/">02_Park_Git</a></h6>
+              <span>4월 4, 2019</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
+              <h6 style="margin: 0;"><a href="/2019/04/04/01-Kim-Git/">01_Kim_Git</a></h6>
+              <span>4월 4, 2019</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
+              <h6 style="margin: 0;"><a href="/2019/04/04/02-Numpy/">02_Numpy</a></h6>
+              <span>4월 4, 2019</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
+              <h6 style="margin: 0;"><a href="/2019/04/04/01-Pandas/">01_Pandas</a></h6>
+              <span>4월 4, 2019</span>
+            </div>
+
+          </li>
+        
+          <li class="clearfix">
+
+            
+              <div class="widget-entry-summary" style="margin: 0;">
+            
+
+              <h6 style="margin: 0;"><a href="/2019/04/04/captcha-solver-study/">Captcha Solver Study</a></h6>
+              <span>4월 4, 2019</span>
             </div>
 
           </li>
@@ -399,19 +1002,40 @@ var themeMenus = {};
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">2</span></li></ul>
+    </div>
+  </div>
+
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Git/" style="font-size: 20px;">Git</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Python/" style="font-size: 20px;">Python</a>
+    </div>
+  </div>
+
   
     
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
 
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">4월 2019</a><span class="archive-list-count">6</span></li></ul>
     </div>
   </div>
 
@@ -466,7 +1090,7 @@ var themeMenus = {};
 </nav> -->
     
 <script>
-  var disqus_shortname = 'shindongwook';
+  var disqus_shortname = 'dasom-captcha';
   
   (function(){
     var dsq = document.createElement('script');

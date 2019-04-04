@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+
+  <!-- PACE Progress Bar START -->
+  
+    <script src="https://raw.githubusercontent.com/HubSpot/pace/v1.0.2/pace.min.js"></script>
+    <link rel="stylesheet" href="https://github.com/HubSpot/pace/raw/master/themes/orange/pace-theme-flash.css">
+  
+  
+
+  <!-- PACE Progress Bar START -->
+
+  
+  <title>01_hexo | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="keywords" content="Hexo">
+  
+  
+  
+  
+  <meta name="description" content="HEXO 블로그 만들기1. Node.js와 NPM 설치 Node.js  서버 사이드를 JavaScript로 구현할 수 있게 만든 런타임  NPM  Node.js기반의 모듈을 모아둔 집합 https://nodejs.org/ko/  2. Hexo 설치1$ npm install -g hexo-cli  3. 블로그 생성생성할 폴더에 접근 후  123$ hexo i">
+<meta name="keywords" content="Hexo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="01_Hexo">
+<meta property="og:url" content="http://dasom-captcha.github.io/2019/04/04/01-Hexo/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="HEXO 블로그 만들기1. Node.js와 NPM 설치 Node.js  서버 사이드를 JavaScript로 구현할 수 있게 만든 런타임  NPM  Node.js기반의 모듈을 모아둔 집합 https://nodejs.org/ko/  2. Hexo 설치1$ npm install -g hexo-cli  3. 블로그 생성생성할 폴더에 접근 후  123$ hexo i">
+<meta property="og:locale" content="ko">
+<meta property="og:image" content="https://user-images.githubusercontent.com/36959292/54869831-83756500-4de1-11e9-97e5-1f472870035f.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/36959292/54869834-99832580-4de1-11e9-8c4d-fd21267cf69e.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/36959292/54869839-a9026e80-4de1-11e9-8f7f-5cac8c91eaf1.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/36959292/55128335-8e6c2480-5156-11e9-8fb9-1fe599fe5929.PNG">
+<meta property="og:image" content="https://user-images.githubusercontent.com/21974799/55216796-129ad680-5241-11e9-9990-2f04f394dce2.JPG">
+<meta property="og:image" content="https://user-images.githubusercontent.com/21974799/55216850-3e1dc100-5241-11e9-86ba-422e557ba3bb.JPG">
+<meta property="og:image" content="https://user-images.githubusercontent.com/21974799/55216867-54c41800-5241-11e9-8d67-9f08f4651b7e.JPG">
+<meta property="og:image" content="https://user-images.githubusercontent.com/21974799/55216911-71605000-5241-11e9-8e63-5f3c62d10122.JPG">
+<meta property="og:image" content="https://user-images.githubusercontent.com/21974799/55216938-850bb680-5241-11e9-8011-763c8fe24a72.JPG">
+<meta property="og:image" content="https://user-images.githubusercontent.com/21974799/55217019-b97f7280-5241-11e9-9ab2-a3c723454445.JPG">
+<meta property="og:image" content="https://user-images.githubusercontent.com/21974799/55217018-b8e6dc00-5241-11e9-84df-c4d362ea53cf.JPG">
+<meta property="og:updated_time" content="2019-04-04T05:07:52.936Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="01_Hexo">
+<meta name="twitter:description" content="HEXO 블로그 만들기1. Node.js와 NPM 설치 Node.js  서버 사이드를 JavaScript로 구현할 수 있게 만든 런타임  NPM  Node.js기반의 모듈을 모아둔 집합 https://nodejs.org/ko/  2. Hexo 설치1$ npm install -g hexo-cli  3. 블로그 생성생성할 폴더에 접근 후  123$ hexo i">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/36959292/54869831-83756500-4de1-11e9-97e5-1f472870035f.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  <link rel="icon" href="/css/images/favicon.ico">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="https://cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+    
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Yanone+Kaffeesatz%3A200%2C300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/hiero.css">
+  <link rel="stylesheet" href="/css/glyphs.css">
+  
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/my.css">
+  <!-- Google Adsense -->
+  
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-0123456789ABCDEF",
+          enable_page_level_ads: true
+      });
+  </script>
+  
+</head>
+</html>
+<script>
+var themeMenus = {};
+
+  themeMenus["/"] = "Home"; 
+
+  themeMenus["/archives"] = "Archives"; 
+
+  themeMenus["/categories"] = "Categories"; 
+
+  themeMenus["/tags"] = "Tags"; 
+
+  themeMenus["/about"] = "About"; 
+
+</script>
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  <header id="allheader" class="site-header" role="banner">
+  <div class="clearfix container">
+      <div class="site-branding">
+
+          <h1 class="site-title">
+            
+              <a href="/" title="Hexo" rel="home"> Hexo </a>
+            
+          </h1>
+
+          
+            
+          <nav id="main-navigation" class="main-navigation" role="navigation">
+            <a class="nav-open">Menu</a>
+            <a class="nav-close">Close</a>
+            <div class="clearfix sf-menu">
+
+              <ul id="main-nav" class="nmenu sf-js-enabled">
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class href="/">Home</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class href="/archives">Archives</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class href="/categories">Categories</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class href="/tags">Tags</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class href="/about">About</a> </li>
+                    
+              </ul>
+            </div>
+          </nav>
+
+
+      </div>
+  </div>
+</header>
+
+
+  <div id="originBgDiv" style="background: #fff; width: 100%;">
+
+      <div style="max-height:600px; overflow: hidden;  display: flex; display: -webkit-flex; align-items: center;">
+        <img id="originBg" width="100%" alt src>
+      </div>
+
+  </div>
+
+  <script>
+  function setAboutIMG(){
+      var imgUrls = "css/images/pose.jpg,https://source.unsplash.com/collection/954550/1920x1080".split(",");
+      var random = Math.floor((Math.random() * imgUrls.length ));
+      if (imgUrls[random].startsWith('http') || imgUrls[random].indexOf('://') >= 0) {
+        document.getElementById("originBg").src=imgUrls[random];
+      } else {
+        document.getElementById("originBg").src='/' + imgUrls[random];
+      }
+  }
+  bgDiv=document.getElementById("originBgDiv");
+  if(location.pathname.match('about')){
+    setAboutIMG();
+    bgDiv.style.display='block';
+  }else{
+    bgDiv.style.display='none';
+  }
+  </script>
+
+
+
+  <div id="container">
+    <div id="wrap">
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-01-Hexo" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost">
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      01_Hexo
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	Posted on <a href="/2019/04/04/01-Hexo/" class="article-date">
+	  <time datetime="2019-04-04T05:03:09.000Z" itemprop="datePublished">4월 4, 2019</time>
+	</a>
+
+      
+	<span id="busuanzi_container_page_pv">
+	</span>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="HEXO-블로그-만들기"><a href="#HEXO-블로그-만들기" class="headerlink" title="HEXO 블로그 만들기"></a>HEXO 블로그 만들기</h2><h3 id="1-Node-js와-NPM-설치"><a href="#1-Node-js와-NPM-설치" class="headerlink" title="1. Node.js와 NPM 설치"></a>1. Node.js와 NPM 설치</h3><ul>
+<li>Node.js</li>
+</ul>
+<p>서버 사이드를 JavaScript로 구현할 수 있게 만든 런타임</p>
+<ul>
+<li>NPM</li>
+</ul>
+<p>Node.js기반의 모듈을 모아둔 집합</p>
+<p><a href="https://nodejs.org/ko/" target="_blank" rel="noopener">https://nodejs.org/ko/</a></p>
+<hr>
+<h3 id="2-Hexo-설치"><a href="#2-Hexo-설치" class="headerlink" title="2. Hexo 설치"></a>2. Hexo 설치</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="3-블로그-생성"><a href="#3-블로그-생성" class="headerlink" title="3. 블로그 생성"></a>3. 블로그 생성</h3><p>생성할 폴더에 접근 후 </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init myBlog</span><br><span class="line">$ <span class="built_in">cd</span> myBlog</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
+<p><img src="https://user-images.githubusercontent.com/36959292/54869831-83756500-4de1-11e9-97e5-1f472870035f.png" alt="1553361798946"></p>
+<ul>
+<li>node_modules : 기본적인 node.js 모듈</li>
+<li>scaffolds : 페이지를 구성할 기본 markdown 파일</li>
+<li>source : 작성한 파일등 리소스</li>
+<li>theme : 테마</li>
+<li>.gitignore : github에 업로드 할때 제외할 파일 목록 정의</li>
+<li>_config.yml : 블로그의 옵션 설정</li>
+</ul>
+<hr>
+<h3 id="4-github에-연동하기"><a href="#4-github에-연동하기" class="headerlink" title="4. github에 연동하기"></a>4. github에 연동하기</h3><p>자동으로 github에 업로드</p>
+<ul>
+<li><p>github repo를 만들때 주소를 JHyunB.github.io 로 함 </p>
+</li>
+<li><p>_config.yml 파일 열고 아래처럼 수정</p>
+</li>
+</ul>
+<p><img src="https://user-images.githubusercontent.com/36959292/54869834-99832580-4de1-11e9-8c4d-fd21267cf69e.png" alt="1553362281981"></p>
+<ul>
+<li>업로드하기 위한 모듈 설치</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<ul>
+<li>hexo deploy 명령어 수행시 위에서 작성한 주소로 업로드</li>
+</ul>
+<hr>
+<h3 id="5-포스트-생성"><a href="#5-포스트-생성" class="headerlink" title="5. 포스트 생성"></a>5. 포스트 생성</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new post first-post</span><br></pre></td></tr></table></figure>
+<p>source/_posts 경로에 myfirstpost.md 생성</p>
+<hr>
+<h3 id="6-빌드"><a href="#6-빌드" class="headerlink" title="6. 빌드"></a>6. 빌드</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate 또는 hexo g</span><br></pre></td></tr></table></figure>
+<ul>
+<li>hexo g 가능</li>
+<li>public 폴더가 생성됨</li>
+</ul>
+<p><img src="https://user-images.githubusercontent.com/36959292/54869839-a9026e80-4de1-11e9-8f7f-5cac8c91eaf1.png" alt="1553362948919"></p>
+<ul>
+<li>2019 : 포스트는 날짜별로 생성</li>
+<li>css : 테마에 맞게 생성</li>
+<li>index.html  : myfirstpost가 변경됨</li>
+</ul>
+<hr>
+<h3 id="7-로컬-테스트"><a href="#7-로컬-테스트" class="headerlink" title="7. 로컬 테스트"></a>7. 로컬 테스트</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<ul>
+<li>내장 서버를 구동 후  <strong><a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a></strong>로 접속</li>
+</ul>
+<hr>
+<h3 id="8-github에-업로드"><a href="#8-github에-업로드" class="headerlink" title="8. github에 업로드"></a>8. github에 업로드</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy 또는 hexo d</span><br></pre></td></tr></table></figure>
+<ul>
+<li>hexo d 가능</li>
+</ul>
+<hr>
+<h3 id="9-블로그-방문"><a href="#9-블로그-방문" class="headerlink" title="9. 블로그 방문"></a>9. 블로그 방문</h3><ul>
+<li>내장서버를 종료해도 <a href="https://jhyunb.github.io/로" target="_blank" rel="noopener">https://jhyunb.github.io/로</a> 접속가능</li>
+</ul>
+<hr>
+<h3 id="10-테마적용"><a href="#10-테마적용" class="headerlink" title="10. 테마적용"></a>10. 테마적용</h3><ul>
+<li><p><a href="https://hexo.io/themes/" target="_blank" rel="noopener">https://hexo.io/themes/</a> 에서 원하는 테마 찾기</p>
+</li>
+<li><p>github에서 다운받아 theme폴더에 저장</p>
+<p><img src="https://user-images.githubusercontent.com/36959292/55128335-8e6c2480-5156-11e9-8fb9-1fe599fe5929.PNG" alt="캡처"></p>
+</li>
+<li><p>hexo _config.yml 파일 theme: 변경</p>
+</li>
+<li>테마마다 추가 설정이 다를 수 있으므로 해당 테마 github 확인</li>
+</ul>
+<hr>
+<h3 id="11-Organization을-통한-여러-사용자의-포스팅"><a href="#11-Organization을-통한-여러-사용자의-포스팅" class="headerlink" title="11. Organization을 통한 여러 사용자의 포스팅"></a>11. Organization을 통한 여러 사용자의 포스팅</h3><p><img src="https://user-images.githubusercontent.com/21974799/55216796-129ad680-5241-11e9-9990-2f04f394dce2.JPG" alt="cap7"></p>
+<ul>
+<li>여러 사용자가 같은 프로젝트를 관리하기 위한 그룹 계정인 Organization을 생성 한다.</li>
+</ul>
+<p><img src="https://user-images.githubusercontent.com/21974799/55216850-3e1dc100-5241-11e9-86ba-422e557ba3bb.JPG" alt="cap1"></p>
+<ul>
+<li>올려진 서버를 clone해서 받은 뒤 (이후 pull을 통해서 항상 최신 버전으로 업데이트 한다.)</li>
+</ul>
+<p><img src="https://user-images.githubusercontent.com/21974799/55216867-54c41800-5241-11e9-8d67-9f08f4651b7e.JPG" alt="cap2"><br><img src="https://user-images.githubusercontent.com/21974799/55216911-71605000-5241-11e9-8e63-5f3c62d10122.JPG" alt="cap3"><br><img src="https://user-images.githubusercontent.com/21974799/55216938-850bb680-5241-11e9-8011-763c8fe24a72.JPG" alt="cap4"></p>
+<ul>
+<li>위와 같은 명령어를 쳐서 필요한 것들을 받고</li>
+</ul>
+<p><img src="https://user-images.githubusercontent.com/21974799/55217019-b97f7280-5241-11e9-9ab2-a3c723454445.JPG" alt="cap5"><br><img src="https://user-images.githubusercontent.com/21974799/55217018-b8e6dc00-5241-11e9-84df-c4d362ea53cf.JPG" alt="cap6"></p>
+<ul>
+<li>포스팅 후 배포하면 된다. (로컬 서버를 통해서 제대로 됐는지 확인하고 commit - push를 해주자.)</li>
+</ul>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/categories/Hexo/">Hexo</a>
+
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
+
+      
+            
+      
+        
+	<section id="comments" class="comment">
+	  <div id="disqus_thread">
+	  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	  </div>
+	</section>
+
+	<script type="text/javascript">
+	var disqus_shortname = 'dasom-captcha';
+	(function(){
+	  var dsq = document.createElement('script');
+	  dsq.type = 'text/javascript';
+	  dsq.async = true;
+	  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+	  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	}());
+	(function(){
+	  var dsq = document.createElement('script');
+	  dsq.type = 'text/javascript';
+	  dsq.async = true;
+	  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+	  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	}());
+	</script>
+
+
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/04/04/02-Park-Git/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">02_Park_Git</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="sidebar">
+    <div id="toc" class="toc-article" style="overflow-y: scroll; max-width: 28%;">
+    <strong class="toc-title">Contents</strong>
+    
+      <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#HEXO-블로그-만들기"><span class="nav-number">1.</span> <span class="nav-text">HEXO 블로그 만들기</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Node-js와-NPM-설치"><span class="nav-number">1.1.</span> <span class="nav-text">1. Node.js와 NPM 설치</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Hexo-설치"><span class="nav-number">1.2.</span> <span class="nav-text">2. Hexo 설치</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-블로그-생성"><span class="nav-number">1.3.</span> <span class="nav-text">3. 블로그 생성</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-github에-연동하기"><span class="nav-number">1.4.</span> <span class="nav-text">4. github에 연동하기</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-포스트-생성"><span class="nav-number">1.5.</span> <span class="nav-text">5. 포스트 생성</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-빌드"><span class="nav-number">1.6.</span> <span class="nav-text">6. 빌드</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-로컬-테스트"><span class="nav-number">1.7.</span> <span class="nav-text">7. 로컬 테스트</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-github에-업로드"><span class="nav-number">1.8.</span> <span class="nav-text">8. github에 업로드</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-블로그-방문"><span class="nav-number">1.9.</span> <span class="nav-text">9. 블로그 방문</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-테마적용"><span class="nav-number">1.10.</span> <span class="nav-text">10. 테마적용</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-Organization을-통한-여러-사용자의-포스팅"><span class="nav-number">1.11.</span> <span class="nav-text">11. Organization을 통한 여러 사용자의 포스팅</span></a></li></ol></li></ol>
+    
+    </div>
+  </aside>
+</section>
+        
+      </div>
+      <footer id="footer" class="site-footer">
+  
+
+  <div class="clearfix container">
+      <div class="site-info">
+	      &copy; 2019 Hexo All Rights Reserved.
+          
+            <span id="busuanzi_container_site_uv">
+              today visits<span id="busuanzi_value_site_uv"></span> 
+              total visits<span id="busuanzi_value_site_pv"></span>
+            </span>
+          
+      </div>
+      <div class="site-credit">
+        Theme by <a href="https://github.com/iTimeTraveler/hexo-theme-hiero" target="_blank">hiero</a>
+      </div>
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var contentdiv = document.getElementById("content");
+
+    contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+</script>
+
+<!-- Custome JS -->
+<script src="/js/my.js"></script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+<script>
+  var disqus_shortname = 'dasom-captcha';
+  
+  var disqus_url = 'http://dasom-captcha.github.io/2019/04/04/01-Hexo/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+
+
+<script src="/js/scripts.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-137732239-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="https://dnqof95d40fo6.cloudfront.net/atw7f8.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js" async=""></script>
+</body>
+</html>

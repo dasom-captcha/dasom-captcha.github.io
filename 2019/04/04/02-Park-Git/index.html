@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+
+  <!-- PACE Progress Bar START -->
+  
+    <script src="https://raw.githubusercontent.com/HubSpot/pace/v1.0.2/pace.min.js"></script>
+    <link rel="stylesheet" href="https://github.com/HubSpot/pace/raw/master/themes/orange/pace-theme-flash.css">
+  
+  
+
+  <!-- PACE Progress Bar START -->
+
+  
+  <title>02_park_git | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="keywords" content="Git">
+  
+  
+  
+  
+  <meta name="description" content="💡 IntroGit Branch 관련된 자료   💡 Index👉 Git   👉 Branch CMD 👉 Branch Practice  💡 Git Base👉 PDF Attached📃 PDF FILE   💡 Branch CMD👉 Why Using the Branch system ?“A successful Git branching model” 컬">
+<meta name="keywords" content="Git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="02_Park_Git">
+<meta property="og:url" content="http://dasom-captcha.github.io/2019/04/04/02-Park-Git/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="💡 IntroGit Branch 관련된 자료   💡 Index👉 Git   👉 Branch CMD 👉 Branch Practice  💡 Git Base👉 PDF Attached📃 PDF FILE   💡 Branch CMD👉 Why Using the Branch system ?“A successful Git branching model” 컬">
+<meta property="og:locale" content="ko">
+<meta property="og:updated_time" content="2019-04-04T04:58:23.762Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="02_Park_Git">
+<meta name="twitter:description" content="💡 IntroGit Branch 관련된 자료   💡 Index👉 Git   👉 Branch CMD 👉 Branch Practice  💡 Git Base👉 PDF Attached📃 PDF FILE   💡 Branch CMD👉 Why Using the Branch system ?“A successful Git branching model” 컬">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  <link rel="icon" href="/css/images/favicon.ico">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="https://cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+    
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Yanone+Kaffeesatz%3A200%2C300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/hiero.css">
+  <link rel="stylesheet" href="/css/glyphs.css">
+  
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/my.css">
+  <!-- Google Adsense -->
+  
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-0123456789ABCDEF",
+          enable_page_level_ads: true
+      });
+  </script>
+  
+</head>
+</html>
+<script>
+var themeMenus = {};
+
+  themeMenus["/"] = "Home"; 
+
+  themeMenus["/archives"] = "Archives"; 
+
+  themeMenus["/categories"] = "Categories"; 
+
+  themeMenus["/tags"] = "Tags"; 
+
+  themeMenus["/about"] = "About"; 
+
+</script>
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  <header id="allheader" class="site-header" role="banner">
+  <div class="clearfix container">
+      <div class="site-branding">
+
+          <h1 class="site-title">
+            
+              <a href="/" title="Hexo" rel="home"> Hexo </a>
+            
+          </h1>
+
+          
+            
+          <nav id="main-navigation" class="main-navigation" role="navigation">
+            <a class="nav-open">Menu</a>
+            <a class="nav-close">Close</a>
+            <div class="clearfix sf-menu">
+
+              <ul id="main-nav" class="nmenu sf-js-enabled">
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class href="/">Home</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class href="/archives">Archives</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class href="/categories">Categories</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class href="/tags">Tags</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class href="/about">About</a> </li>
+                    
+              </ul>
+            </div>
+          </nav>
+
+
+      </div>
+  </div>
+</header>
+
+
+  <div id="originBgDiv" style="background: #fff; width: 100%;">
+
+      <div style="max-height:600px; overflow: hidden;  display: flex; display: -webkit-flex; align-items: center;">
+        <img id="originBg" width="100%" alt src>
+      </div>
+
+  </div>
+
+  <script>
+  function setAboutIMG(){
+      var imgUrls = "css/images/pose.jpg,https://source.unsplash.com/collection/954550/1920x1080".split(",");
+      var random = Math.floor((Math.random() * imgUrls.length ));
+      if (imgUrls[random].startsWith('http') || imgUrls[random].indexOf('://') >= 0) {
+        document.getElementById("originBg").src=imgUrls[random];
+      } else {
+        document.getElementById("originBg").src='/' + imgUrls[random];
+      }
+  }
+  bgDiv=document.getElementById("originBgDiv");
+  if(location.pathname.match('about')){
+    setAboutIMG();
+    bgDiv.style.display='block';
+  }else{
+    bgDiv.style.display='none';
+  }
+  </script>
+
+
+
+  <div id="container">
+    <div id="wrap">
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-02-Park-Git" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost">
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      02_Park_Git
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	Posted on <a href="/2019/04/04/02-Park-Git/" class="article-date">
+	  <time datetime="2019-04-04T04:52:54.000Z" itemprop="datePublished">4월 4, 2019</time>
+	</a>
+
+      
+	<span id="busuanzi_container_page_pv">
+	</span>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="💡-Intro"><a href="#💡-Intro" class="headerlink" title="💡 Intro"></a>💡 Intro</h2><p>Git Branch 관련된 자료 </p>
+<hr>
+<h2 id="💡-Index"><a href="#💡-Index" class="headerlink" title="💡 Index"></a>💡 Index</h2><p>👉 Git  </p>
+<p>👉 Branch CMD</p>
+<p>👉 Branch Practice</p>
+<hr>
+<h2 id="💡-Git-Base"><a href="#💡-Git-Base" class="headerlink" title="💡 Git Base"></a>💡 Git Base</h2><h3 id="👉-PDF-Attached"><a href="#👉-PDF-Attached" class="headerlink" title="👉 PDF Attached"></a>👉 PDF Attached</h3><p><strong><a href="../pdf/Git.pdf">📃 PDF FILE </a></strong></p>
+<hr>
+<h2 id="💡-Branch-CMD"><a href="#💡-Branch-CMD" class="headerlink" title="💡 Branch CMD"></a>💡 Branch CMD</h2><h3 id="👉-Why-Using-the-Branch-system"><a href="#👉-Why-Using-the-Branch-system" class="headerlink" title="👉 Why Using the Branch system ?"></a>👉 Why Using the Branch system ?</h3><p><a href="https://backlog.com/git-tutorial/kr/stepup/stepup1_5.html" target="_blank" rel="noopener">“A successful Git branching model” 컬럼</a></p>
+<p>원문 : <a href="http://nvie.com/posts/a-successful-git-branching-model/" target="_blank" rel="noopener">http://nvie.com/posts/a-successful-git-branching-model/</a></p>
+<h3 id="👉-CRUD"><a href="#👉-CRUD" class="headerlink" title="👉 CRUD"></a>👉 CRUD</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">### Create and Switch </span></span><br><span class="line">$ git branch iss53 <span class="comment"># 브런치 만들고 </span></span><br><span class="line">$ git checkout iss53 <span class="comment"># 전환</span></span><br><span class="line"><span class="comment"># 두개를 하나로 줄이면</span></span><br><span class="line">$ git checkout -b iss53</span><br><span class="line"></span><br><span class="line"><span class="comment">### Push</span></span><br><span class="line">$ git checkout iss53</span><br><span class="line">$ git add -u </span><br><span class="line">$ git commit -m <span class="string">"YOUR MESSAGE"</span></span><br><span class="line">$ git push origin iss53</span><br><span class="line"></span><br><span class="line"><span class="comment">### Merge</span></span><br><span class="line">$ git checkout master</span><br><span class="line">$ git merge iss53</span><br><span class="line"></span><br><span class="line"><span class="comment">### Branch List</span></span><br><span class="line">$ git Branch</span><br><span class="line"></span><br><span class="line"><span class="comment">### Delete</span></span><br><span class="line">$ git branch -d iss53</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="💡-Branch-Practice"><a href="#💡-Branch-Practice" class="headerlink" title="💡 Branch Practice"></a>💡 Branch Practice</h2><h3 id="👉-To-Do"><a href="#👉-To-Do" class="headerlink" title="👉 To-Do"></a>👉 To-Do</h3><ol>
+<li>Master 에서 아무 Py 파일 하나 만들어서 tracking 후</li>
+<li>dev 브런치를 판다. </li>
+<li>이동해서 1번에서 만든 파일을 수정 </li>
+<li>master Branch에 merge </li>
+</ol>
+<hr>
+<h2 id="💡-Ref-Link"><a href="#💡-Ref-Link" class="headerlink" title="💡 Ref Link"></a>💡 Ref Link</h2><ul>
+<li><a href="https://backlog.com/git-tutorial/kr/stepup/stepup1_1.html" target="_blank" rel="noopener">누구나 쉽게 이해할수있는 Git 입문</a></li>
+<li><a href="https://git-scm.com/book/ko/v1/Git-%EB%B8%8C%EB%9E%9C%EC%B9%98-%EB%B8%8C%EB%9E%9C%EC%B9%98%EC%99%80-Merge%EC%9D%98-%EA%B8%B0%EC%B4%88" target="_blank" rel="noopener">Git-scm</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/categories/Git/">Git</a>
+
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
+
+      
+            
+      
+        
+	<section id="comments" class="comment">
+	  <div id="disqus_thread">
+	  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	  </div>
+	</section>
+
+	<script type="text/javascript">
+	var disqus_shortname = 'dasom-captcha';
+	(function(){
+	  var dsq = document.createElement('script');
+	  dsq.type = 'text/javascript';
+	  dsq.async = true;
+	  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+	  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	}());
+	(function(){
+	  var dsq = document.createElement('script');
+	  dsq.type = 'text/javascript';
+	  dsq.async = true;
+	  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+	  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	}());
+	</script>
+
+
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/04/04/01-Hexo/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          01_Hexo
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/04/04/01-Kim-Git/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">01_Kim_Git</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="sidebar">
+    <div id="toc" class="toc-article" style="overflow-y: scroll; max-width: 28%;">
+    <strong class="toc-title">Contents</strong>
+    
+      <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#💡-Intro"><span class="nav-number">1.</span> <span class="nav-text">💡 Intro</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#💡-Index"><span class="nav-number">2.</span> <span class="nav-text">💡 Index</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#💡-Git-Base"><span class="nav-number">3.</span> <span class="nav-text">💡 Git Base</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#👉-PDF-Attached"><span class="nav-number">3.1.</span> <span class="nav-text">👉 PDF Attached</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#💡-Branch-CMD"><span class="nav-number">4.</span> <span class="nav-text">💡 Branch CMD</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#👉-Why-Using-the-Branch-system"><span class="nav-number">4.1.</span> <span class="nav-text">👉 Why Using the Branch system ?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#👉-CRUD"><span class="nav-number">4.2.</span> <span class="nav-text">👉 CRUD</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#💡-Branch-Practice"><span class="nav-number">5.</span> <span class="nav-text">💡 Branch Practice</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#👉-To-Do"><span class="nav-number">5.1.</span> <span class="nav-text">👉 To-Do</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#💡-Ref-Link"><span class="nav-number">6.</span> <span class="nav-text">💡 Ref Link</span></a></li></ol>
+    
+    </div>
+  </aside>
+</section>
+        
+      </div>
+      <footer id="footer" class="site-footer">
+  
+
+  <div class="clearfix container">
+      <div class="site-info">
+	      &copy; 2019 Hexo All Rights Reserved.
+          
+            <span id="busuanzi_container_site_uv">
+              today visits<span id="busuanzi_value_site_uv"></span> 
+              total visits<span id="busuanzi_value_site_pv"></span>
+            </span>
+          
+      </div>
+      <div class="site-credit">
+        Theme by <a href="https://github.com/iTimeTraveler/hexo-theme-hiero" target="_blank">hiero</a>
+      </div>
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var contentdiv = document.getElementById("content");
+
+    contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+</script>
+
+<!-- Custome JS -->
+<script src="/js/my.js"></script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+<script>
+  var disqus_shortname = 'dasom-captcha';
+  
+  var disqus_url = 'http://dasom-captcha.github.io/2019/04/04/02-Park-Git/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+
+
+<script src="/js/scripts.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-137732239-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="https://dnqof95d40fo6.cloudfront.net/atw7f8.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js" async=""></script>
+</body>
+</html>

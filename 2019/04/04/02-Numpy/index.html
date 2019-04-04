@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+
+  <!-- PACE Progress Bar START -->
+  
+    <script src="https://raw.githubusercontent.com/HubSpot/pace/v1.0.2/pace.min.js"></script>
+    <link rel="stylesheet" href="https://github.com/HubSpot/pace/raw/master/themes/orange/pace-theme-flash.css">
+  
+  
+
+  <!-- PACE Progress Bar START -->
+
+  
+  <title>02_numpy | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="keywords" content="Python">
+  
+  
+  
+  
+  <meta name="description" content="1. numpy numpy는 과학계산을 위한 라이브러리   다차원 배열을 처리하는데  유용한 기능을 제공  리스트나 튜플보다 훨씬 더 빨리 배열을 처리   2. 배열만들기(1):array() 리스트와 튜플로부터 배열 생성가능  1234a = np.array([[1, 3, 5, 7], [2, 4, 6, 8]])print(a.ndim) #디멘션 반환 2prin">
+<meta name="keywords" content="Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="02_Numpy">
+<meta property="og:url" content="http://dasom-captcha.github.io/2019/04/04/02-Numpy/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1. numpy numpy는 과학계산을 위한 라이브러리   다차원 배열을 처리하는데  유용한 기능을 제공  리스트나 튜플보다 훨씬 더 빨리 배열을 처리   2. 배열만들기(1):array() 리스트와 튜플로부터 배열 생성가능  1234a = np.array([[1, 3, 5, 7], [2, 4, 6, 8]])print(a.ndim) #디멘션 반환 2prin">
+<meta property="og:locale" content="ko">
+<meta property="og:updated_time" content="2019-04-04T04:46:06.615Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="02_Numpy">
+<meta name="twitter:description" content="1. numpy numpy는 과학계산을 위한 라이브러리   다차원 배열을 처리하는데  유용한 기능을 제공  리스트나 튜플보다 훨씬 더 빨리 배열을 처리   2. 배열만들기(1):array() 리스트와 튜플로부터 배열 생성가능  1234a = np.array([[1, 3, 5, 7], [2, 4, 6, 8]])print(a.ndim) #디멘션 반환 2prin">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  <link rel="icon" href="/css/images/favicon.ico">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="https://cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+    
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Yanone+Kaffeesatz%3A200%2C300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/hiero.css">
+  <link rel="stylesheet" href="/css/glyphs.css">
+  
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/my.css">
+  <!-- Google Adsense -->
+  
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-0123456789ABCDEF",
+          enable_page_level_ads: true
+      });
+  </script>
+  
+</head>
+</html>
+<script>
+var themeMenus = {};
+
+  themeMenus["/"] = "Home"; 
+
+  themeMenus["/archives"] = "Archives"; 
+
+  themeMenus["/categories"] = "Categories"; 
+
+  themeMenus["/tags"] = "Tags"; 
+
+  themeMenus["/about"] = "About"; 
+
+</script>
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  <header id="allheader" class="site-header" role="banner">
+  <div class="clearfix container">
+      <div class="site-branding">
+
+          <h1 class="site-title">
+            
+              <a href="/" title="Hexo" rel="home"> Hexo </a>
+            
+          </h1>
+
+          
+            
+          <nav id="main-navigation" class="main-navigation" role="navigation">
+            <a class="nav-open">Menu</a>
+            <a class="nav-close">Close</a>
+            <div class="clearfix sf-menu">
+
+              <ul id="main-nav" class="nmenu sf-js-enabled">
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class href="/">Home</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class href="/archives">Archives</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class href="/categories">Categories</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class href="/tags">Tags</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class href="/about">About</a> </li>
+                    
+              </ul>
+            </div>
+          </nav>
+
+
+      </div>
+  </div>
+</header>
+
+
+  <div id="originBgDiv" style="background: #fff; width: 100%;">
+
+      <div style="max-height:600px; overflow: hidden;  display: flex; display: -webkit-flex; align-items: center;">
+        <img id="originBg" width="100%" alt src>
+      </div>
+
+  </div>
+
+  <script>
+  function setAboutIMG(){
+      var imgUrls = "css/images/pose.jpg,https://source.unsplash.com/collection/954550/1920x1080".split(",");
+      var random = Math.floor((Math.random() * imgUrls.length ));
+      if (imgUrls[random].startsWith('http') || imgUrls[random].indexOf('://') >= 0) {
+        document.getElementById("originBg").src=imgUrls[random];
+      } else {
+        document.getElementById("originBg").src='/' + imgUrls[random];
+      }
+  }
+  bgDiv=document.getElementById("originBgDiv");
+  if(location.pathname.match('about')){
+    setAboutIMG();
+    bgDiv.style.display='block';
+  }else{
+    bgDiv.style.display='none';
+  }
+  </script>
+
+
+
+  <div id="container">
+    <div id="wrap">
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-02-Numpy" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost">
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      02_Numpy
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	Posted on <a href="/2019/04/04/02-Numpy/" class="article-date">
+	  <time datetime="2019-04-04T04:36:05.000Z" itemprop="datePublished">4월 4, 2019</time>
+	</a>
+
+      
+	<span id="busuanzi_container_page_pv">
+	</span>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-numpy"><a href="#1-numpy" class="headerlink" title="1. numpy"></a>1. numpy</h2><ul>
+<li><p>numpy는 과학계산을 위한 라이브러리 </p>
+</li>
+<li><p>다차원 배열을 처리하는데  유용한 기능을 제공</p>
+</li>
+<li><p>리스트나 튜플보다 훨씬 더 빨리 배열을 처리</p>
+</li>
+</ul>
+<h2 id="2-배열만들기-1-array"><a href="#2-배열만들기-1-array" class="headerlink" title="2. 배열만들기(1):array()"></a>2. 배열만들기(1):array()</h2><ul>
+<li>리스트와 튜플로부터 배열 생성가능</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = np.array([[<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>], [<span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span>, <span class="number">8</span>]])</span><br><span class="line">print(a.ndim) <span class="comment">#디멘션 반환 2</span></span><br><span class="line">print(a.size) <span class="comment">#배열에 있는 총 개수 반환 8</span></span><br><span class="line">print(a.shape) <span class="comment">#각 차원의 크기 반환 (2,4)</span></span><br></pre></td></tr></table></figure>
+<h2 id="3-배열만들기-2-arange"><a href="#3-배열만들기-2-arange" class="headerlink" title="3. 배열만들기(2):arange()"></a>3. 배열만들기(2):arange()</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">b = np.arange(<span class="number">10</span>) <span class="comment">#[0 1 2 3 4 5 6 7 8 9]</span></span><br><span class="line">b= np.arange(<span class="number">7</span>, <span class="number">10</span>) <span class="comment">#[7 8 9]</span></span><br><span class="line">b = np.arange(<span class="number">0</span>, <span class="number">10</span>, <span class="number">2</span>) <span class="comment">#[0 2 4 6 8]</span></span><br><span class="line">b = np.arange(<span class="number">2.0</span>, <span class="number">3.0</span>, <span class="number">0.3</span>) <span class="comment">#[2.  2.3 2.6 2.9]</span></span><br></pre></td></tr></table></figure>
+<h2 id="4-배열만들기-3-zeros-ones-random"><a href="#4-배열만들기-3-zeros-ones-random" class="headerlink" title="4. 배열만들기(3):zeros(), ones(), random()"></a>4. 배열만들기(3):zeros(), ones(), random()</h2><ul>
+<li>zeros() : 모든 값이 0인 배열 반환</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">c = np.zeros((<span class="number">2</span>, <span class="number">4</span>))</span><br></pre></td></tr></table></figure>
+<p>[[0. 0. 0. 0.]<br> [0. 0. 0. 0.]]</p>
+<ul>
+<li>ones() : 모든 값이 1인 배열 반환</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">c = np.ones((<span class="number">3</span>, <span class="number">3</span>))</span><br></pre></td></tr></table></figure>
+<p>[[1. 1. 1.]<br> [1. 1. 1.]<br> [1. 1. 1.]]</p>
+<ul>
+<li>random() : 0.0과 0.1 사이의 임의 값을 채운 배열 반환</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">c = np.random.random((<span class="number">2</span>, <span class="number">4</span>))</span><br></pre></td></tr></table></figure>
+<p>[[0.89451067 0.46158826 0.32610563 0.20057699]<br> [0.58088544 0.93966855 0.23445485 0.72952238]]</p>
+<h2 id="5-배열-모양-바꾸기-reshape"><a href="#5-배열-모양-바꾸기-reshape" class="headerlink" title="5. 배열 모양 바꾸기 : reshape()"></a>5. 배열 모양 바꾸기 : reshape()</h2><ul>
+<li>배열의 랭크 크기의 곱이 총 배열 수와 같아야 함</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">d = np.arange(<span class="number">0</span>,<span class="number">10</span>)</span><br><span class="line">d = d.reshape(<span class="number">2</span>,<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+<p>[[0 1 2 3 4]<br> [5 6 7 8 9]]</p>
+<h2 id="6-항목-얻기"><a href="#6-항목-얻기" class="headerlink" title="6. 항목 얻기 : []"></a>6. 항목 얻기 : []</h2><ul>
+<li>1차원 배열은 리스트처럼 작동</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">e = np.arange(<span class="number">0</span>,<span class="number">10</span>)</span><br><span class="line">print(e[<span class="number">-1</span>], e[<span class="number">7</span>]) <span class="comment">#9 7</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>2차원은 리스트와 다르다</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">e.shape= (<span class="number">2</span>,<span class="number">5</span>)</span><br><span class="line">print(e[<span class="number">1</span>,<span class="number">1</span>])</span><br><span class="line">e = [[<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>],[<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]]</span><br><span class="line">print(e[<span class="number">1</span>,<span class="number">1</span>]) <span class="comment">#에러 발생</span></span><br></pre></td></tr></table></figure>
+<h2 id="7-배열-연산"><a href="#7-배열-연산" class="headerlink" title="7. 배열 연산"></a>7. 배열 연산</h2><ul>
+<li>더하기, 빼기, 곱하기 동시연산 가능</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> numpy <span class="keyword">import</span> *</span><br><span class="line">a = arange(<span class="number">0</span>,<span class="number">3</span>) <span class="comment">#[0 1 2]</span></span><br><span class="line">a *= <span class="number">3</span> <span class="comment">#[0 3 6]</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>@ : 행렬곱</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = np.array([[<span class="number">1</span>,<span class="number">2</span>],[<span class="number">3</span>,<span class="number">4</span>]])</span><br><span class="line">b = a@a</span><br></pre></td></tr></table></figure>
+<h2 id="8-실습"><a href="#8-실습" class="headerlink" title="8. 실습"></a>8. 실습</h2><ul>
+<li>랜덤 분포 생성</li>
+<li>파일 입출력</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">mean = <span class="number">0</span> <span class="comment">#평균</span></span><br><span class="line">std = <span class="number">5</span> <span class="comment">#표준편차</span></span><br><span class="line">arr1 = np.random.normal(mean, std, [<span class="number">5</span>, <span class="number">5</span>]) <span class="comment">#정규분포</span></span><br><span class="line">arr2 = np.random.exponential(<span class="number">2</span>, [<span class="number">5</span>, <span class="number">5</span>]) <span class="comment">#지수분포</span></span><br><span class="line">arr3 = arr1 * arr2</span><br><span class="line">print(arr3)</span><br><span class="line">np.save(<span class="string">"./data"</span>, arr3) <span class="comment">#data.npy로 저장</span></span><br><span class="line"></span><br><span class="line">arr = np.load(<span class="string">"./data.npy"</span>) <span class="comment">#불러오기</span></span><br><span class="line">devArr = np.vsplit(arr, <span class="number">5</span>) <span class="comment">#가로로 자르기</span></span><br><span class="line">print(devArr[<span class="number">0</span>][<span class="number">0</span>])</span><br><span class="line">plt.plot(devArr[<span class="number">0</span>][<span class="number">0</span>]) <span class="comment">#그래프그리기</span></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/categories/Python/">Python</a>
+
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+      
+            
+      
+        
+	<section id="comments" class="comment">
+	  <div id="disqus_thread">
+	  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	  </div>
+	</section>
+
+	<script type="text/javascript">
+	var disqus_shortname = 'dasom-captcha';
+	(function(){
+	  var dsq = document.createElement('script');
+	  dsq.type = 'text/javascript';
+	  dsq.async = true;
+	  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+	  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	}());
+	(function(){
+	  var dsq = document.createElement('script');
+	  dsq.type = 'text/javascript';
+	  dsq.async = true;
+	  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+	  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	}());
+	</script>
+
+
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/04/04/01-Kim-Git/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          01_Kim_Git
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/04/04/01-Pandas/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">01_Pandas</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="sidebar">
+    <div id="toc" class="toc-article" style="overflow-y: scroll; max-width: 28%;">
+    <strong class="toc-title">Contents</strong>
+    
+      <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-numpy"><span class="nav-number">1.</span> <span class="nav-text">1. numpy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-배열만들기-1-array"><span class="nav-number">2.</span> <span class="nav-text">2. 배열만들기(1):array()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-배열만들기-2-arange"><span class="nav-number">3.</span> <span class="nav-text">3. 배열만들기(2):arange()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-배열만들기-3-zeros-ones-random"><span class="nav-number">4.</span> <span class="nav-text">4. 배열만들기(3):zeros(), ones(), random()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-배열-모양-바꾸기-reshape"><span class="nav-number">5.</span> <span class="nav-text">5. 배열 모양 바꾸기 : reshape()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-항목-얻기"><span class="nav-number">6.</span> <span class="nav-text">6. 항목 얻기 : []</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-배열-연산"><span class="nav-number">7.</span> <span class="nav-text">7. 배열 연산</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-실습"><span class="nav-number">8.</span> <span class="nav-text">8. 실습</span></a></li></ol>
+    
+    </div>
+  </aside>
+</section>
+        
+      </div>
+      <footer id="footer" class="site-footer">
+  
+
+  <div class="clearfix container">
+      <div class="site-info">
+	      &copy; 2019 Hexo All Rights Reserved.
+          
+            <span id="busuanzi_container_site_uv">
+              today visits<span id="busuanzi_value_site_uv"></span> 
+              total visits<span id="busuanzi_value_site_pv"></span>
+            </span>
+          
+      </div>
+      <div class="site-credit">
+        Theme by <a href="https://github.com/iTimeTraveler/hexo-theme-hiero" target="_blank">hiero</a>
+      </div>
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var contentdiv = document.getElementById("content");
+
+    contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+</script>
+
+<!-- Custome JS -->
+<script src="/js/my.js"></script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+<script>
+  var disqus_shortname = 'dasom-captcha';
+  
+  var disqus_url = 'http://dasom-captcha.github.io/2019/04/04/02-Numpy/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+
+
+<script src="/js/scripts.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-137732239-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="https://dnqof95d40fo6.cloudfront.net/atw7f8.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js" async=""></script>
+</body>
+</html>
